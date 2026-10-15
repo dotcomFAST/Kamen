@@ -255,6 +255,14 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 .form-status:empty{display:none}
 .form-status.ok{color:#2F5130}.form-status.err{color:#8A2B1F}
 .ph.lazy,.rv.lazy{background-image:none}
+
+.hdr-end{display:flex;align-items:center;gap:10px}
+.lang{display:flex;padding:3px;border-radius:999px;border:1px solid rgba(28,28,26,0.16);background:rgba(255,255,255,0.35)}
+.lang button{font:inherit;font-size:12px;font-weight:500;letter-spacing:.08em;min-width:40px;height:38px;padding:0 10px;border:0;border-radius:999px;background:transparent;color:#1C1C1A;cursor:pointer;transition:background-color .3s ease,color .3s ease}
+.lang button[aria-pressed="true"]{background:#1C1C1A;color:#F3F1EC}
+.lang button:focus-visible{outline:2px solid #1C1C1A;outline-offset:2px}
+@media (max-width: 1024px){.hdr-end{margin-left:auto}}
+@media (max-width: 640px){.lang button{min-width:36px;height:36px;padding:0 8px}}
 </style>
 </head>
 <body>
@@ -273,10 +281,13 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
         <a href="#studio" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Студія</a>
         <a href="#contact" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Контакти</a>
       </nav>
+      <div class="hdr-end">
+      <div class="lang" role="group" aria-label="Language / Мова"><button type="button" data-lang="uk" aria-pressed="true" lang="uk" title="Українська">UA</button><button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">EN</button></div>
       <a href="#contact" data-form-open aria-haspopup="dialog" class="btn hdr-cta" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: 999px; background: #1C1C1A; color: #F3F1EC; display: flex; align-items: center; gap: 10px">Обговорити проєкт <span aria-hidden="true">→</span></a>
       <button type="button" class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: #1C1C1A; color: #F3F1EC; cursor: pointer; align-items: center; justify-content: center">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7 H17 M3 13 H17" stroke="#F3F1EC" stroke-width="1.6" stroke-linecap="round"></path></svg>
       </button>
+      </div>
     </header>
     <div class="m-menu glass hdr " style="margin-top: 8px; border-radius: 20px; padding: 10px; flex-direction: column; gap: 2px">
       <a href="#projects" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Проєкти</a>
@@ -782,6 +793,68 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
         .then(function () { btn.disabled = false; });
     });
   });
+})();
+</script>
+<script>
+(function () {
+  var EN = {"Проєкти": "Projects", "Підхід": "Approach", "Студія": "Studio", "Контакти": "Contact", "Обговорити проєкт": "Discuss a project", "Обговорити проєкт →": "Discuss a project →", "Архітектурне бюро · Київ · з 2015": "Architecture studio · Kyiv · since 2015", "Архітектура, яка": "Architecture that", "тримає слово": "keeps its word", "Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.": "We design and build private residences. Budget and timeline are fixed in the contract, and every week of delay is on us.", "Дивитися проєкти": "View projects", "Гортайте": "Scroll", "Кожен проєкт —": "Every project —", "історія з цифрами": "a story in numbers", "Усі проєкти →": "All projects →", "3 фото": "3 photos", "Квартира · Липки": "Apartment · Lypky", "Квартира · Київ, Липки": "Apartment · Kyiv, Lypky", "Тиша в центрі міста": "Silence in the city centre", "−24 дБ шуму": "−24 dB noise", "Будинок · Козин": "House · Kozyn", "Будинок · Київщина, Козин": "House · Kyiv region, Kozyn", "Дім, що відкривається до лісу": "A home that opens onto the forest", "СЕС 15 кВт": "15 kW solar", "Пентхаус · Поділ": "Penthouse · Podil", "Пентхаус · Київ, Поділ": "Penthouse · Kyiv, Podil", "Лофт для колекціонера": "A loft for a collector", "Музейне світло": "Museum-grade light", "років на ринку": "years in business", "завершені об'єкти": "completed projects", "здано в договірний термін": "delivered on the contract date", "середнє відхилення від кошторису": "average deviation from budget", "(Наш підхід)": "(Our approach)", "Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це": "We speak in numbers, not adjectives. Every project comes with a", "фіксований кошторис": "fixed budget", ", точний графік і один архітектор від першого ескізу до ключів.": ", a precise schedule and one architect from the first sketch to the keys.", "(Гарантії)": "(Guarantees)", "Три речі, які ми": "Three things we", "прописуємо в договорі": "put in the contract", "Фіксований кошторис": "Fixed budget", "Після затвердження проєкту ціна не росте. Зміни можливі лише з вашої ініціативи.": "Once the design is approved, the price doesn't grow. Changes happen only at your request.", "Фіксований термін": "Fixed timeline", "За кожен тиждень затримки з нашої вини повертаємо 0,5% вартості робіт.": "For every week of delay on our side, we refund 0.5% of the cost of works.", "Один відповідальний": "One person in charge", "Ваш архітектор веде об'єкт від першого ескізу до передачі ключів.": "Your architect leads the project from the first sketch to the handover of keys.", "П'ять етапів": "Five stages", "без сюрпризів": "no surprises", "Детальніше про підхід →": "More about our approach →", "Знайомство": "Introduction", "Виїзд на об'єкт, обміри, орієнтовний бюджет.": "Site visit, measurements, a ballpark budget.", "Концепція": "Concept", "Планування, матеріали, простір у 3D.": "Layout, materials, the space in 3D.", "Проєкт і кошторис": "Design & budget", "Креслення, специфікації, фіксована ціна в договорі.": "Drawings, specifications, a fixed price in the contract.", "Будівництво": "Construction", "Архітектор щотижня на об'єкті, фотозвіт щоп'ятниці.": "The architect is on site every week, with a photo report every Friday.", "Передача": "Handover", "Комплектація, ключі та 2 роки гарантії.": "Furnishing, keys and a 2-year warranty.", "(Відгуки)": "(Reviews)", "Що кажуть": "What our", "власники": "owners say", "«Щоп'ятниці — фотозвіт і оновлений графік. За рік будівництва я жодного разу не їздив на об'єкт без потреби.»": "“Every Friday: a photo report and an updated schedule. In a year of construction I never once had to drive to the site for nothing.”", "ДС": "DS", "Дмитро С.": "Dmytro S.", "Будинок у Конча-Заспі": "House in Koncha-Zaspa", "«Кошторис затвердили в березні, і він не змінився до самого кінця. Для нас це було важливіше за будь-який дизайн.»": "“The budget was approved in March and didn't change until the very end. For us that mattered more than any design.”", "ОК": "OK", "Олена та Ігор К.": "Olena & Ihor K.", "Будинок у Козині": "House in Kozyn", "«Найбільше боявся, що ремонт затягнеться на два роки. Ми заїхали на тиждень раніше, ніж обіцяли.»": "“My biggest fear was the renovation dragging on for two years. We moved in a week earlier than promised.”", "від договору до ключів": "from contract to keys", "після об'єднання квартир": "after merging two apartments", "АМ": "AM", "Андрій М.": "Andrii M.", "Квартира на Липках": "Apartment in Lypky", "«Архітекторка була на об'єкті щотижня. Будь-яке питання вирішувалось за день, а не за місяць.»": "“The architect was on site every week. Any question was settled in a day, not a month.”", "НР": "NR", "Наталія Р.": "Nataliia R.", "Квартира на Печерську": "Apartment in Pechersk", "«Роботи з колекції нарешті живуть, а не висять. Світло й вологість продумані до дрібниць.»": "“The pieces in my collection finally live instead of just hanging. Light and humidity are thought through to the last detail.”", "реалізація під ключ": "turnkey delivery", "пентхаус із галереєю": "penthouse with a gallery", "ВЛ": "VL", "Віктор Л.": "Viktor L.", "Пентхаус на Подолі": "Penthouse in Podil", "Розкажіть про": "Tell us about", "свій об'єкт": "your project", "Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.": "The first meeting and site visit are free. Afterwards you'll get a ballpark budget and timeline.", "Ім'я": "Name", "Телефон": "Phone", "Тип об'єкта": "Property type", "Квартира": "Apartment", "Будинок": "House", "Пентхаус": "Penthouse", "Комерція": "Commercial", "Площа, м²": "Area, m²", "Надіслати заявку →": "Send request →", "Як до вас звертатися": "How should we address you", "Дякуємо! Ми зателефонуємо вам протягом робочого дня.": "Thank you! We'll call you back within one business day.", "Форма поки не підключена. Зателефонуйте нам: +380 44 643 56 76": "The form isn't connected yet. Call us: +380 44 643 56 76", "Не вдалося надіслати. Зателефонуйте нам: +380 44 643 56 76": "Couldn't send. Call us: +380 44 643 56 76", "Архітектура, яка тримає слово": "Architecture that keeps its word", "Київ, вул. Липська, 5": "5 Lypska St, Kyiv", "Пн–Пт, 10:00–19:00": "Mon–Fri, 10:00–19:00", "Головне меню": "Main menu", "Відкрити меню": "Open menu", "Закрити меню": "Close menu", "Відкрити галерею: Квартира на Липках": "Open gallery: Apartment in Lypky", "Відкрити галерею: Будинок у Козині": "Open gallery: House in Kozyn", "Відкрити галерею: Пентхаус на Подолі": "Open gallery: Penthouse in Podil", "Оцінка 5 з 5": "Rated 5 out of 5", "Галерея проєкту": "Project gallery", "Закрити галерею": "Close gallery", "Попереднє фото": "Previous photo", "Наступне фото": "Next photo", "Закрити форму": "Close form"}, RULES = [["^(\\d+(?:–\\d+)?) тижн(?:і|ів)$", "$1 weeks"], ["^1 тиждень$", "1 week"], ["^(\\d+(?:–\\d+)?) місяц(?:ь|і|ів)$", "$1 months"], ["^(\\d+) міс\\.$", "$1 mo."], ["^(\\d+) м²$", "$1 m²"], ["^Фото (\\d) з (\\d)$", "Photo $1 of $2"], ["^Фото (\\d)$", "Photo $1"]], META = {"uk": null, "en": {"title": "KAMEN — architecture that keeps its word", "desc": "KAMEN is an architecture studio in Kyiv. Design, interiors and turnkey renovation of private residences with a fixed budget and timeline in the contract."}};
+  RULES = RULES.map(function (r) { return [new RegExp(r[0]), r[1]]; });
+  var ATTRS = ['aria-label', 'placeholder', 'title', 'alt'];
+  var lang = 'uk', origText = new WeakMap(), origAttr = new WeakMap();
+  var ukTitle = document.title, md = document.querySelector('meta[name="description"]'), ukDesc = md && md.content;
+  function tr(v) {
+    var k = v.replace(/\s+/g, ' ').trim();
+    if (!k || !/[А-Яа-яЄєІіЇїҐґ]/.test(k)) return null;
+    if (EN.hasOwnProperty(k)) return v.replace(v.trim(), EN[k]).replace(/^\s*/, v.match(/^\s*/)[0]);
+    for (var i = 0; i < RULES.length; i++) if (RULES[i][0].test(k)) return k.replace(RULES[i][0], RULES[i][1]);
+    return null;
+  }
+  function doText(n) {
+    var p = n.parentNode; if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE') return;
+    if (lang === 'en') { var t = tr(n.nodeValue); if (t !== null && t !== n.nodeValue) { origText.set(n, n.nodeValue); n.nodeValue = t; } }
+    else if (origText.has(n)) { n.nodeValue = origText.get(n); origText.delete(n); }
+  }
+  function doAttrs(el) {
+    if (el.nodeType !== 1) return;
+    for (var i = 0; i < ATTRS.length; i++) {
+      var a = ATTRS[i], v = el.getAttribute(a); if (v === null) continue;
+      var o = origAttr.get(el) || {};
+      if (lang === 'en') { var t = tr(v); if (t !== null) { o[a] = v; origAttr.set(el, o); el.setAttribute(a, t); } }
+      else if (o[a] !== undefined) { el.setAttribute(a, o[a]); delete o[a]; }
+    }
+  }
+  function walk(root) {
+    if (root.nodeType === 3) return doText(root);
+    if (root.nodeType !== 1) return;
+    doAttrs(root);
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT), n;
+    while ((n = w.nextNode())) n.nodeType === 3 ? doText(n) : doAttrs(n);
+  }
+  var mo = new MutationObserver(function (ms) {
+    if (lang !== 'en') return;
+    ms.forEach(function (m) {
+      if (m.type === 'characterData') doText(m.target);
+      else if (m.type === 'attributes') doAttrs(m.target);
+      else m.addedNodes.forEach(walk);
+    });
+  });
+  mo.observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ATTRS });
+  function set(l, save) {
+    lang = l === 'en' ? 'en' : 'uk';
+    walk(document.body);
+    document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
+    document.title = lang === 'en' ? META.en.title : ukTitle;
+    if (md) md.content = lang === 'en' ? META.en.desc : ukDesc;
+    document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false'); });
+    if (save) try { localStorage.setItem('kamen-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { if (b.getAttribute('data-lang') !== lang) set(b.getAttribute('data-lang'), true); });
+  });
+  var q = (location.search.match(/[?&]lang=(en|uk|ua)\b/) || [])[1], saved = null;
+  try { saved = localStorage.getItem('kamen-lang'); } catch (e) {}
+  var start = q ? (q === 'en' ? 'en' : 'uk') : saved;
+  if (start === 'en') set('en', false); else set('uk', false);
 })();
 </script>
 </body>
