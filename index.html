@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="KAMEN — архітектурне бюро в Києві. Проєкт, інтер'єр і ремонт під ключ для приватних резиденцій з фіксованим кошторисом і термінами в договорі.">
+<meta name="theme-color" content="#F3F1EC">
+<!-- TODO: замініть https://kamen.studio/ на ваш домен у canonical, og:url, og:image і twitter:image -->
+<link rel="canonical" href="https://kamen.studio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAMEN">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="KAMEN — архітектура, яка тримає слово">
+<meta property="og:description" content="KAMEN — архітектурне бюро в Києві. Проєкт, інтер'єр і ремонт під ключ для приватних резиденцій з фіксованим кошторисом і термінами в договорі.">
+<meta property="og:url" content="https://kamen.studio/">
+<!-- og-image.jpg (1200×630) лежить у корені пакета; після заміни фото оновіть і його -->
+<meta property="og:image" content="https://kamen.studio/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KAMEN — архітектурне бюро, Київ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KAMEN — архітектура, яка тримає слово">
+<meta name="twitter:description" content="KAMEN — архітектурне бюро в Києві. Проєкт, інтер'єр і ремонт під ключ для приватних резиденцій з фіксованим кошторисом і термінами в договорі.">
+<meta name="twitter:image" content="https://kamen.studio/og-image.jpg">
+<!-- Фавіконки: favicon.svg / favicon-32.png / apple-touch-icon.png у корені пакета — замініть на фінальний логотип -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
+<!-- GA4: вставити тег тут -->
+<!-- Meta Pixel: вставити тут -->
+<title>KAMEN — архітектура, яка тримає слово</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500&amp;family=Italiana&amp;display=swap" rel="stylesheet">
+<style>
+:root{--img-42a980d8:url(assets/img/hero.webp);--img-b2c358b3:url(assets/img/card-lypky.webp);--img-e2f5fee7:url(assets/img/g-lypky-2.webp);--img-0c616aff:url(assets/img/g-lypky-3.webp);--img-c3bad232:url(assets/img/card-kozyn.webp);--img-ad6ba169:url(assets/img/g-kozyn-2.webp);--img-5a8c666d:url(assets/img/g-kozyn-3.webp);--img-45b11e85:url(assets/img/card-podil.webp);--img-b79b0eba:url(assets/img/g-podil-2.webp);--img-3b0e3077:url(assets/img/g-podil-3.webp);--img-86549867:url(assets/img/review-lypky.webp);--img-7ab8f033:url(assets/img/review-podil.webp);--img-5afc09e2:url(assets/img/guarantees.webp);--img-c2f1f6ee:url(assets/img/guarantees-m.webp);--img-3fb8d6fc:url(assets/img/contact.webp);--img-4e570506:url(assets/img/contact-m.webp);}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F3F1EC}
+[id]{scroll-margin-top:110px}
+.hdr{background:rgba(255,255,255,0.5)}
+.nav-link{transition:background-color .35s ease,color .35s ease}
+.nav-link:hover,.nav-link.active{background:rgba(255,255,255,0.7)}
+a{color:#1C1C1A}a:hover{color:#4A5A3C}
+.glass{background:rgba(255,255,255,0.28);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,0.55);box-shadow:0 8px 32px rgba(28,28,26,0.10)}
+.glass-dark{background:rgba(28,28,26,0.30);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.22)}
+.ph{position:relative;overflow:hidden;background-color:#B9B2A6}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,20,18,.30) 0%,rgba(20,20,18,.05) 35%,rgba(20,20,18,.45) 100%)}
+.hero-video{opacity:0;transition:opacity 1s ease;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+.bg-hero,.bg-lypky,.bg-kozyn,.bg-podil,.bg-guar,.bg-bed,.bg-contact{background-size:cover;background-position:center}
+.bg-hero{background-image:var(--img-42a980d8)}
+.bg-lypky{background-image:linear-gradient(180deg,rgba(20,20,18,.05),rgba(20,20,18,.25)),var(--img-b2c358b3)}
+.bg-kozyn{background-image:linear-gradient(180deg,rgba(20,20,18,.05),rgba(20,20,18,.25)),var(--img-c3bad232)}
+.bg-podil{background-image:linear-gradient(180deg,rgba(20,20,18,.05),rgba(20,20,18,.25)),var(--img-45b11e85)}
+.bg-guar{background-image:linear-gradient(180deg,rgba(20,20,18,.58),rgba(20,20,18,.48)),var(--img-5afc09e2)}
+@media (max-width:640px){.bg-guar{background-image:linear-gradient(180deg,rgba(20,20,18,.58),rgba(20,20,18,.48)),var(--img-c2f1f6ee)}}
+.bg-contact{background-image:linear-gradient(180deg,rgba(20,20,18,.40),rgba(20,20,18,.30)),var(--img-3fb8d6fc)}
+@media (max-width:640px){.bg-contact{background-image:linear-gradient(180deg,rgba(20,20,18,.40),rgba(20,20,18,.30)),var(--img-4e570506)}}
+@keyframes k-up{from{opacity:0;transform:translateY(28px)}}
+@keyframes k-down{from{opacity:0;transform:translateY(-16px)}}
+@keyframes k-word{from{opacity:0;letter-spacing:0.12em;filter:blur(10px)}}
+@keyframes k-drift{from{background-position:50% 30%}to{background-position:50% 70%}}
+@keyframes k-rise{from{opacity:0;transform:translateY(48px) scale(0.98)}}
+.kb{animation:k-drift 26s ease-in-out infinite alternate;transition:background-image 0.9s ease}
+.a-down{animation:k-down 0.9s cubic-bezier(.2,.7,.2,1) both}
+.a-word{animation:k-word 1.6s cubic-bezier(.16,1,.3,1) both}
+.a-up{animation:k-up 1s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.35s}.d2{animation-delay:.5s}.d3{animation-delay:.65s}.d4{animation-delay:.8s}.d5{animation-delay:.95s}
+@supports (animation-timeline: view()){.reveal{animation:k-rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+.js-io .reveal{opacity:0;transform:translateY(48px) scale(0.98);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.js-io .reveal.in{opacity:1;transform:none}
+.js-io .reveal.in.lift:hover{transform:translateY(-8px)}
+.lift{transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .6s ease}
+@media (hover:hover){.lift:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(28,28,26,0.18)}}
+.lift-panel{transition:transform .6s cubic-bezier(.2,.7,.2,1),background .6s ease}
+@media (hover:hover){.lift:hover .lift-panel{transform:translateY(-6px);background:rgba(255,255,255,0.42)}}
+.btn{transition:transform .35s cubic-bezier(.2,.7,.2,1),background-color .35s ease,box-shadow .35s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(28,28,26,0.16)}
+.btn-round{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.btn-round:hover{transform:scale(1.08)}.btn-round:active{transform:scale(0.94)}
+.burger{display:none}
+.m-menu{display:none}
+.m-menu.hdr{background:rgba(243,241,236,0.86)}
+.m-link{transition:background-color .3s ease}
+.m-link:hover{background:rgba(255,255,255,0.6)}
+@media (max-width: 1024px){
+  .nav-desk{display:none !important}
+  .burger{display:flex}
+  .m-menu.open{display:flex;animation:k-down .35s cubic-bezier(.2,.7,.2,1) both}
+  .sec.pt{padding-top:100px !important}
+  .sec.pb{padding-bottom:100px !important}
+  .pcard{height:520px !important}
+  .hdr-cta{margin-left:auto}
+  .hero-shade{background:linear-gradient(180deg,rgba(20,20,18,0.25) 0%,rgba(20,20,18,0.20) 35%,rgba(20,20,18,0.62) 100%)}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+  .pgrid > :last-child{grid-column:1 / -1}
+  .num{font-size:56px !important}
+  .ggrid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:14px !important}
+  .gcard{padding:24px !important}
+}
+@media (max-width: 640px){
+  .hdr-cta{display:none !important}
+  .hdr{padding:10px 10px 10px 20px !important}
+  .hero{height:auto !important;min-height:100svh;padding:12px !important}
+  .hero-in{padding:120px 8px 8px !important}
+  .hero-row{margin-top:24px !important;gap:24px !important}
+  .a-word{font-size:27vw !important}
+  .ft-word{font-size:26vw !important}
+  .sec{padding-left:16px !important;padding-right:16px !important}
+  .sec.pt{padding-top:72px !important}
+  .sec.pb{padding-bottom:72px !important}
+  .pcard{height:440px !important;border-radius:22px !important}
+  .pgrid,.ggrid{grid-template-columns:minmax(0,1fr) !important}
+  .pgrid > :last-child{grid-column:auto}
+  .stat{flex:1 1 50% !important;padding:24px 16px !important}
+  .stat:nth-child(odd){border-left:0 !important;padding-left:0 !important}
+  .stat:nth-child(n+3){border-top:1px solid #CFC9BE}
+  .num{font-size:48px !important}
+  .gcard{padding:24px !important}
+  .quote{padding:28px !important;gap:24px !important}
+  .bed{min-height:300px !important}
+  .cform{padding:20px !important}
+}
+.g-l1{background-image:var(--img-b2c358b3)}
+.g-l2{background-image:var(--img-e2f5fee7)}
+.g-l3{background-image:var(--img-0c616aff)}
+.g-k1{background-image:var(--img-c3bad232)}
+.g-k2{background-image:var(--img-ad6ba169)}
+.g-k3{background-image:var(--img-5a8c666d)}
+.g-p1{background-image:var(--img-45b11e85)}
+.g-p2{background-image:var(--img-b79b0eba)}
+.g-p3{background-image:var(--img-3b0e3077)}
+@keyframes k-fade{from{opacity:0}}
+@keyframes k-pop{from{opacity:0;transform:translateY(28px) scale(0.97)}}
+.lb{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;animation:k-fade .35s ease both}
+.lb-bg{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;background:rgba(20,20,18,0.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);cursor:zoom-out}
+.lb-panel{position:relative;width:min(1120px,100%);max-height:100%;border-radius:28px;padding:16px;box-sizing:border-box;background:rgba(243,241,236,0.14) !important;border-color:rgba(255,255,255,0.28) !important;animation:k-pop .5s cubic-bezier(.2,.7,.2,1) both}
+.lb-view{position:relative;overflow:hidden;border-radius:20px;touch-action:pan-y}
+.lb-track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.lb-slide{flex:0 0 100%;height:min(68vh,680px);background-color:#B9B2A6;background-size:cover;background-position:center}
+.lb-arrow{position:absolute;top:50%;margin-top:-24px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,0.6);background:rgba(243,241,236,0.82);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-dot{width:44px;height:24px;border:0;padding:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-dot::before{content:"";width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,0.5);transition:width .35s ease,background-color .35s ease}
+.lb-dot.on::before{width:26px;background:#FFFFFF}
+@media (max-width: 640px){.lb{padding:10px}.lb-panel{padding:10px;border-radius:22px}.lb-slide{height:64vh}.lb-arrow{width:44px;height:44px;margin-top:-22px}}
+.rv-grid{display:flex;gap:16px;align-items:stretch}
+.rv-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px}
+.rv-col > .rv-c{flex:1}
+.rv{margin:0;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box}
+.rv-dark{background:#1C1C1A;color:#F3F1EC}
+.rv-light{background:#FFFFFF;color:#1C1C1A;border:1px solid #E2DDD3}
+.rv-photo{color:#FFFFFF;background-color:#3A3935;background-size:cover;background-position:center;justify-content:flex-end;min-height:560px}
+.rv-lypky{background-image:linear-gradient(180deg,rgba(20,20,18,.20) 0%,rgba(20,20,18,.45) 40%,rgba(20,20,18,.88) 100%),var(--img-86549867)}
+.rv-podil{background-image:linear-gradient(180deg,rgba(20,20,18,.20) 0%,rgba(20,20,18,.45) 40%,rgba(20,20,18,.88) 100%),var(--img-7ab8f033)}
+.rv-stars{display:flex;gap:3px}
+.rv-q{margin:0;font-size:17px;line-height:1.55}
+.rv-photo .rv-q{font-size:19px}
+.rv-stats{display:flex;gap:28px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.22);border-bottom:1px solid rgba(255,255,255,0.22)}
+.rv-num{font-size:40px;font-weight:300;letter-spacing:-0.03em;line-height:1}
+.rv-cap{font-size:12px;color:#D6D1C7;margin-top:6px}
+.rv-person{display:flex;align-items:center;gap:12px}
+.rv-av{flex:0 0 44px;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;letter-spacing:.04em}
+.rv-e{min-height:380px}
+@media (max-width:1024px){
+  .rv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rv-col{display:contents}
+  .rv-a{grid-column:1;grid-row:1}.rv-b{grid-column:2;grid-row:1}.rv-c{grid-column:1;grid-row:2 / span 2}.rv-d{grid-column:2;grid-row:2}.rv-e{grid-column:2;grid-row:3}
+}
+@media (max-width:640px){
+  .rv-grid{display:grid;grid-template-columns:minmax(0,1fr)}
+  .rv-a,.rv-b,.rv-c,.rv-d,.rv-e{grid-column:auto;grid-row:auto}
+  .rv{padding:22px}
+  .rv-photo{min-height:480px}
+  .rv-num{font-size:34px}
+}
+.fm-panel{position:relative;width:min(520px,100%);max-height:100%;overflow:auto;box-sizing:border-box;padding:32px;border-radius:28px;background:rgba(243,241,236,0.94);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,0.6);box-shadow:0 30px 80px rgba(20,20,18,0.35);color:#1C1C1A;animation:k-pop .5s cubic-bezier(.2,.7,.2,1) both}
+@media (max-width: 640px){.fm-panel{padding:22px;border-radius:22px}}
+.pc-label{display:none}
+.pc-dots{display:none}
+@media (min-width:1025px){
+  .pgrid{display:flex !important;gap:12px !important;height:620px}
+  .pgrid .pcard{flex:1 1 0;min-width:0;height:100% !important;transition:flex-grow .8s cubic-bezier(.2,.7,.2,1),box-shadow .6s ease}
+  .pgrid .pcard:first-child{flex-grow:3.6}
+  .pgrid:has(.pcard:hover,.pcard:focus-visible) .pcard{flex-grow:1}
+  .pgrid:has(.pcard) .pcard:hover,.pgrid:has(.pcard) .pcard:focus-visible{flex-grow:3.6}
+  .pgrid .pcard.lift:hover,.js-io .pgrid .pcard.reveal.in.lift:hover{transform:none}
+  .pgrid .pc-info{right:auto !important;width:430px;opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1),background .6s ease}
+  .pgrid .pc-badge{opacity:0;transition:opacity .45s ease}
+  .pc-label{display:block;position:absolute;left:24px;bottom:28px;writing-mode:vertical-rl;transform:rotate(180deg);color:#FFFFFF;font-size:13px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 10px rgba(0,0,0,.45);transition:opacity .4s ease}
+  .pgrid:not(:has(.pcard:hover,.pcard:focus-visible)) .pcard:first-child .pc-info,
+  .pgrid .pcard:hover .pc-info,.pgrid .pcard:focus-visible .pc-info{opacity:1;transform:none;transition-delay:.25s,.25s,0s}
+  .pgrid:not(:has(.pcard:hover,.pcard:focus-visible)) .pcard:first-child .pc-badge,
+  .pgrid .pcard:hover .pc-badge,.pgrid .pcard:focus-visible .pc-badge{opacity:1;transition-delay:.25s}
+  .pgrid:not(:has(.pcard:hover,.pcard:focus-visible)) .pcard:first-child .pc-label,
+  .pgrid .pcard:hover .pc-label,.pgrid .pcard:focus-visible .pc-label{opacity:0}
+}
+@keyframes k-depth{
+  0%{transform:rotateY(34deg) scale(.82);opacity:.55;z-index:1}
+  50%{transform:none;opacity:1;z-index:3}
+  100%{transform:rotateY(-34deg) scale(.82);opacity:.55;z-index:1}
+}
+@media (max-width:1024px){
+  .pgrid{display:flex !important;gap:0 !important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:calc(50% - 50vw);padding:8px calc(50vw - min(39vw,210px)) 20px !important;perspective:1100px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .pgrid::-webkit-scrollbar{display:none}
+  .pgrid .pcard{flex:0 0 min(78vw,420px);height:min(118vw,560px) !important;scroll-snap-align:center;scroll-snap-stop:always;border-radius:24px !important;transform-origin:center}
+  .js-io .pgrid .pcard.reveal{opacity:1;transform:none}
+  .pc-dots{display:flex;justify-content:center;gap:8px;margin-top:4px}
+  .pc-dots span{width:8px;height:8px;border-radius:999px;background:#CFC9BE;transition:width .35s ease,background-color .35s ease}
+  .pc-dots span.on{width:26px;background:#1C1C1A}
+}
+@media (max-width:640px){
+  .pgrid{padding-inline:18vw !important}
+  .pgrid .pcard{flex-basis:70vw;height:min(105vw,520px) !important;margin-inline:-3vw}
+}
+@supports (animation-timeline: view()){
+  @media (max-width:1024px){
+    .pgrid .pcard{animation:k-depth linear both !important;animation-timeline:view(inline) !important;animation-range:cover 0% cover 100% !important}
+  }
+}
+@media (prefers-reduced-motion: reduce){.pgrid .pcard{animation:none !important}}
+.stat{flex:1 1 0;min-width:0;box-sizing:border-box;padding:36px 28px}
+.stat:first-child{padding-left:0}
+.stat + .stat{border-left:1px solid #CFC9BE}
+@keyframes k-stage{from{opacity:0;transform:translateX(-56px)}to{opacity:1;transform:none}}
+@keyframes k-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.stages::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:#1C1C1A;transform:scaleX(0);transform-origin:left center;opacity:0}
+.stages.armed .stage{opacity:0;transform:translateX(-56px)}
+.stages.go::before{opacity:1;animation:k-line 5s linear both}
+.stages.go .stage{animation:k-stage 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 1s)}
+.stages.done::before{opacity:1;transform:scaleX(1)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none !important;transition:none !important}.js-io .reveal{opacity:1;transform:none}}
+.ph-tag{position:absolute;left:16px;bottom:16px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#1C1C1A;background:rgba(255,255,255,0.7);padding:6px 10px;border-radius:999px}
+</style>
+<style>
+.hero-video.ready{opacity:1}
+.hero-track{position:relative;height:200vh;height:200svh}
+#hero{position:sticky !important;top:0}
+@media (min-width:641px){#hero{height:100vh !important;height:100svh !important}}
+@media (max-width:640px){#hero{min-height:100vh;min-height:100svh}}
+.scrub .hero-track{height:320vh;height:320svh}
+.next-panel{position:relative;z-index:5;min-height:100vh;min-height:100svh;margin-top:-100vh;margin-top:-100svh;background:#F3F1EC;border-radius:48px 48px 0 0;box-shadow:0 -24px 60px rgba(20,20,18,.28)}
+@media (max-width:640px){.next-panel{border-radius:32px 32px 0 0}}
+@media (prefers-reduced-motion: reduce){.hero-track,.scrub .hero-track{height:auto}#hero{position:relative !important}.next-panel{margin-top:0}}
+.scrub .hero-in{will-change:transform}
+.scroll-hint{position:absolute;right:40px;bottom:36px;z-index:2;display:none;flex-direction:column;align-items:center;gap:12px;color:#FFFFFF;font-size:11px;letter-spacing:.2em;text-transform:uppercase;transition:opacity .4s ease}
+.scroll-hint i{display:block;width:1px;height:48px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 50%,rgba(255,255,255,0) 100%);background-size:100% 200%;animation:k-hint 1.8s ease-in-out infinite}
+@keyframes k-hint{0%{background-position:0 100%}100%{background-position:0 -100%}}
+.scrub .scroll-hint{display:flex}
+@media (max-width:1024px){.scrub .hero-track{height:290vh;height:290svh}}
+@media (max-width:640px){.scroll-hint{display:none !important}}
+</style>
+<style>html{scroll-behavior:smooth}
+.form-status{margin:0;font-size:14px;line-height:1.45;min-height:0}
+.form-status:empty{display:none}
+.form-status.ok{color:#2F5130}.form-status.err{color:#8A2B1F}
+.ph.lazy,.rv.lazy{background-image:none}
+</style>
+</head>
+<body>
+<div id="top" style="font-family: 'Onest', system-ui, sans-serif; color: #1C1C1A; background: #F3F1EC; min-height: 100vh">
+
+  <!-- STICKY HEADER: zero-height sticky rail, so the hero still starts at the very top -->
+  <div style="position: sticky; top: 0; z-index: 50; height: 0; padding: 0 20px; display: flow-root">
+    <header class="a-down glass hdr" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px 14px 28px; border-radius: 20px; margin-top: 20px">
+      <a href="#top" class="nav-logo" style="text-decoration: none; display: flex; align-items: center; gap: 12px">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 19 L11 3 L19 19 Z" fill="none" stroke="#1C1C1A" stroke-width="1.6"></path><path d="M7 19 L11 11 L15 19" fill="none" stroke="#1C1C1A" stroke-width="1.6"></path></svg>
+        <span style="font-weight: 600; letter-spacing: 0.22em; font-size: 15px">KAMEN</span>
+      </a>
+      <nav class="nav-desk" aria-label="Головне меню" style="display: flex; flex-wrap: wrap; gap: 6px">
+        <a href="#projects" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Проєкти</a>
+        <a href="#approach" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Підхід</a>
+        <a href="#studio" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Студія</a>
+        <a href="#contact" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Контакти</a>
+      </nav>
+      <a href="#contact" data-form-open aria-haspopup="dialog" class="btn hdr-cta" style="text-decoration: none; font-size: 14px; font-weight: 500; padding: 13px 22px; border-radius: 999px; background: #1C1C1A; color: #F3F1EC; display: flex; align-items: center; gap: 10px">Обговорити проєкт <span aria-hidden="true">→</span></a>
+      <button type="button" class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: #1C1C1A; color: #F3F1EC; cursor: pointer; align-items: center; justify-content: center">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7 H17 M3 13 H17" stroke="#F3F1EC" stroke-width="1.6" stroke-linecap="round"></path></svg>
+      </button>
+    </header>
+    <div class="m-menu glass hdr " style="margin-top: 8px; border-radius: 20px; padding: 10px; flex-direction: column; gap: 2px">
+      <a href="#projects" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Проєкти</a>
+      <a href="#approach" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Підхід</a>
+      <a href="#studio" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Студія</a>
+      <a href="#contact" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Контакти</a>
+      <a href="#contact" data-form-open aria-haspopup="dialog" style="margin-top: 8px; text-decoration: none; text-align: center; font-size: 16px; font-weight: 500; padding: 16px; border-radius: 999px; background: #1C1C1A; color: #F3F1EC">Обговорити проєкт →</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-track" id="hero-track">
+  <section id="hero" class="kb ph hero bg-hero" style="height: 880px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+    <video class="hero-video" id="hero-video" muted playsinline preload="auto" aria-hidden="true" tabindex="-1" data-tail="v1791912272/hailuo-03_Smooth_cinematic_camera_dolly_out_and_subtle_pan_to_the_right_revealing_more_of_-0.mp4"></video>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="hero-in" style="z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; max-width: 1360px; width: 100%; margin: 0 auto; padding: 0 24px 24px; box-sizing: border-box; position: relative">
+      <div class="a-word" style="font-family: 'Italiana', 'Cormorant Garamond', serif; font-size: clamp(68px, 22.5vw, 356px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: rgba(255,255,255,0.92)">KAMEN</div>
+      <div class="hero-row" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: 40px">
+        <div style="max-width: 560px">
+          <p class="a-up d1" style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF">Архітектурне бюро · Київ · з 2015</p>
+          <h1 class="a-up d2" style="margin: 0; font-size: clamp(36px, 4.2vw, 60px); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF">Архітектура, яка <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15em">тримає слово</span></h1>
+          <p class="a-up d3" style="margin: 18px 0 28px; font-size: 17px; line-height: 1.5; color: #FFFFFF; max-width: 480px">Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.</p>
+          <div class="a-up d4" style="display: flex; flex-wrap: wrap; gap: 10px">
+            <a href="#projects" class="btn" style="text-decoration: none; font-size: 15px; font-weight: 500; padding: 15px 26px; border-radius: 999px; background: #F3F1EC; color: #1C1C1A">Дивитися проєкти</a>
+            <a href="#contact" class="btn glass" style="text-decoration: none; font-size: 15px; padding: 15px 26px; border-radius: 999px; color: #FFFFFF">Обговорити проєкт</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="scroll-hint" aria-hidden="true"><span>Гортайте</span><i></i></div>
+  </section>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="next-panel">
+  <section id="projects" class="sec pt pb" style="max-width: 1360px; margin: 0 auto; padding: 140px 24px 140px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+      <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Кожен проєкт — <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">історія з цифрами</span></h2>
+      <a href="#projects" class="btn" style="text-decoration: none; font-size: 15px; font-weight: 500; padding: 14px 24px; border-radius: 999px; border: 1px solid #1C1C1A">Усі проєкти →</a>
+    </div>
+    <div class="pgrid" id="pgrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
+      <button type="button" id="case" data-open="0" aria-label="Відкрити галерею: Квартира на Липках" class="reveal lift ph bg-lypky pcard lazy" style="display: block; width: 100%; font: inherit; color: inherit; text-align: left; border: 0; padding: 0; cursor: zoom-in; height: 620px; border-radius: 28px">
+        <span class="glass pc-badge" style="position: absolute; top: 14px; right: 14px; display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; font-size: 12px; color: #1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.5" y="3" width="9" height="9" rx="1.5" fill="none" stroke="#1C1C1A" stroke-width="1.2"></rect><path d="M4 1.5 H12.5 V10" fill="none" stroke="#1C1C1A" stroke-width="1.2"></path></svg>3 фото</span>
+        <span class="pc-label" aria-hidden="true">Квартира · Липки</span>
+        <div class="glass lift-panel pc-info" style="position: absolute; left: 14px; right: 14px; bottom: 14px; border-radius: 20px; padding: 20px">
+          <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3E3C37">Квартира · Київ, Липки</div>
+          <div style="font-size: 24px; font-weight: 500; margin: 8px 0 12px">Тиша в центрі міста</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px">
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">186 м²</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">11 міс.</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">−24 дБ шуму</span>
+          </div>
+        </div>
+      </button>
+      <button type="button" data-open="1" aria-label="Відкрити галерею: Будинок у Козині" class="reveal lift ph bg-kozyn pcard lazy" style="display: block; width: 100%; font: inherit; color: inherit; text-align: left; border: 0; padding: 0; cursor: zoom-in; height: 620px; border-radius: 28px">
+        <span class="glass pc-badge" style="position: absolute; top: 14px; right: 14px; display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; font-size: 12px; color: #1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.5" y="3" width="9" height="9" rx="1.5" fill="none" stroke="#1C1C1A" stroke-width="1.2"></rect><path d="M4 1.5 H12.5 V10" fill="none" stroke="#1C1C1A" stroke-width="1.2"></path></svg>3 фото</span>
+        <span class="pc-label" aria-hidden="true">Будинок · Козин</span>
+        <div class="glass lift-panel pc-info" style="position: absolute; left: 14px; right: 14px; bottom: 14px; border-radius: 20px; padding: 20px">
+          <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3E3C37">Будинок · Козин</div>
+          <div style="font-size: 24px; font-weight: 500; margin: 8px 0 12px">Дім, що відкривається до лісу</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px">
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">420 м²</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">18 міс.</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">СЕС 15 кВт</span>
+          </div>
+        </div>
+      </button>
+      <button type="button" data-open="2" aria-label="Відкрити галерею: Пентхаус на Подолі" class="reveal lift ph bg-podil pcard lazy" style="display: block; width: 100%; font: inherit; color: inherit; text-align: left; border: 0; padding: 0; cursor: zoom-in; height: 620px; border-radius: 28px">
+        <span class="glass pc-badge" style="position: absolute; top: 14px; right: 14px; display: flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; font-size: 12px; color: #1C1C1A"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="1.5" y="3" width="9" height="9" rx="1.5" fill="none" stroke="#1C1C1A" stroke-width="1.2"></rect><path d="M4 1.5 H12.5 V10" fill="none" stroke="#1C1C1A" stroke-width="1.2"></path></svg>3 фото</span>
+        <span class="pc-label" aria-hidden="true">Пентхаус · Поділ</span>
+        <div class="glass lift-panel pc-info" style="position: absolute; left: 14px; right: 14px; bottom: 14px; border-radius: 20px; padding: 20px">
+          <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #3E3C37">Пентхаус · Поділ</div>
+          <div style="font-size: 24px; font-weight: 500; margin: 8px 0 12px">Лофт для колекціонера</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px">
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">240 м²</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">9 міс.</span>
+            <span style="padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.6)">Музейне світло</span>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="pc-dots" aria-hidden="true"><span class="on"></span><span class=""></span><span class=""></span></div>
+  </section>
+  </div>
+
+  <!-- NUMBERS -->
+  <section class="sec pb" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
+    <div class="nums" style="display: flex; flex-wrap: wrap; border-top: 1px solid #CFC9BE; border-bottom: 1px solid #CFC9BE">
+      <div class="reveal stat"><div class="num" data-to="11" data-prefix="" data-suffix="" style="font-size: 72px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums">11</div><div style="margin-top: 10px; font-size: 15px; color: #5C5A54">років на ринку</div></div>
+      <div class="reveal stat"><div class="num" data-to="64" data-prefix="" data-suffix="" style="font-size: 72px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums">64</div><div style="margin-top: 10px; font-size: 15px; color: #5C5A54">завершені об'єкти</div></div>
+      <div class="reveal stat"><div class="num" data-to="92" data-prefix="" data-suffix="%" style="font-size: 72px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums">92%</div><div style="margin-top: 10px; font-size: 15px; color: #5C5A54">здано в договірний термін</div></div>
+      <div class="reveal stat"><div class="num" data-to="3" data-prefix="±" data-suffix="%" style="font-size: 72px; font-weight: 300; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums">±3%</div><div style="margin-top: 10px; font-size: 15px; color: #5C5A54">середнє відхилення від кошторису</div></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="sec pb" style="max-width: 1120px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
+    <div class="reveal" style="display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5C5A54; margin-bottom: 28px"><span>(Наш підхід)</span><span style="flex: 0 0 120px; height: 1px; background: #BDB7AC"></span></div>
+    <p class="reveal" style="margin: 0; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.18; letter-spacing: -0.02em; font-weight: 400">Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.12em">фіксований кошторис</span>, точний графік і один архітектор від першого ескізу до ключів.</p>
+  </section>
+
+  <!-- GUARANTEES -->
+  <section class="sec pt pb ph bg-guar lazy" style="padding: 120px 24px; box-sizing: border-box">
+    <div style="max-width: 1360px; margin: 0 auto; position: relative">
+      <p class="reveal" style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF">(Гарантії)</p>
+      <h2 class="reveal" style="margin: 0 0 56px; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; color: #FFFFFF; max-width: 860px">Три речі, які ми <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">прописуємо в договорі</span></h2>
+      <div class="ggrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+        <div class="reveal glass gcard" style="border-radius: 24px; padding: 32px">
+          <div><h3 style="font-size: 26px; font-weight: 500; margin: 0 0 10px">Фіксований кошторис</h3><div style="font-size: 16px; line-height: 1.5">Після затвердження проєкту ціна не росте. Зміни можливі лише з вашої ініціативи.</div></div>
+        </div>
+        <div class="reveal glass gcard" style="border-radius: 24px; padding: 32px">
+          <div><h3 style="font-size: 26px; font-weight: 500; margin: 0 0 10px">Фіксований термін</h3><div style="font-size: 16px; line-height: 1.5">За кожен тиждень затримки з нашої вини повертаємо 0,5% вартості робіт.</div></div>
+        </div>
+        <div class="reveal glass gcard" style="border-radius: 24px; padding: 32px">
+          <div><h3 style="font-size: 26px; font-weight: 500; margin: 0 0 10px">Один відповідальний</h3><div style="font-size: 16px; line-height: 1.5">Ваш архітектор веде об'єкт від першого ескізу до передачі ключів.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="approach" class="sec pt pb" style="max-width: 1360px; margin: 0 auto; padding: 140px 24px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
+      <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">П'ять етапів <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">без сюрпризів</span></h2>
+      <a href="#approach" style="font-size: 15px; font-weight: 500">Детальніше про підхід →</a>
+    </div>
+    <ol class="stages" style="position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid #CFC9BE">
+      <li class="stage" style="--i: 0; padding: 28px 24px 0 0"><div style="font-size: 13px; color: #5C5A54">1 тиждень</div><h3 style="font-size: 20px; font-weight: 500; margin: 12px 0 8px">Знайомство</h3><div style="font-size: 15px; line-height: 1.5; color: #3E3C37">Виїзд на об'єкт, обміри, орієнтовний бюджет.</div></li>
+      <li class="stage" style="--i: 1; padding: 28px 24px 0 0"><div style="font-size: 13px; color: #5C5A54">3–4 тижні</div><h3 style="font-size: 20px; font-weight: 500; margin: 12px 0 8px">Концепція</h3><div style="font-size: 15px; line-height: 1.5; color: #3E3C37">Планування, матеріали, простір у 3D.</div></li>
+      <li class="stage" style="--i: 2; padding: 28px 24px 0 0"><div style="font-size: 13px; color: #5C5A54">6–8 тижнів</div><h3 style="font-size: 20px; font-weight: 500; margin: 12px 0 8px">Проєкт і кошторис</h3><div style="font-size: 15px; line-height: 1.5; color: #3E3C37">Креслення, специфікації, фіксована ціна в договорі.</div></li>
+      <li class="stage" style="--i: 3; padding: 28px 24px 0 0"><div style="font-size: 13px; color: #5C5A54">6–14 місяців</div><h3 style="font-size: 20px; font-weight: 500; margin: 12px 0 8px">Будівництво</h3><div style="font-size: 15px; line-height: 1.5; color: #3E3C37">Архітектор щотижня на об'єкті, фотозвіт щоп'ятниці.</div></li>
+      <li class="stage" style="--i: 4; padding: 28px 24px 0 0"><div style="font-size: 13px; color: #5C5A54">4–6 тижнів</div><h3 style="font-size: 20px; font-weight: 500; margin: 12px 0 8px">Передача</h3><div style="font-size: 15px; line-height: 1.5; color: #3E3C37">Комплектація, ключі та 2 роки гарантії.</div></li>
+    </ol>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="studio" class="sec pb" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+      <div>
+        <div class="reveal" style="display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5C5A54; margin-bottom: 20px"><span>(Відгуки)</span><span style="flex: 0 0 120px; height: 1px; background: #BDB7AC"></span></div>
+        <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Що кажуть <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">власники</span></h2>
+      </div>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-col"><figure class="reveal rv rv-dark rv-a"><div class="rv-stars" role="img" aria-label="Оцінка 5 з 5"><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg></div><blockquote class="rv-q">«Щоп'ятниці — фотозвіт і оновлений графік. За рік будівництва я жодного разу не їздив на об'єкт без потреби.»</blockquote><figcaption class="rv-person"><span class="rv-av" aria-hidden="true" style="background: #3A3935; color: #F3F1EC">ДС</span><span><strong style="display: block; font-weight: 500; font-size: 15px">Дмитро С.</strong><span style="font-size: 13px; color: #C9C4BA">Будинок у Конча-Заспі</span></span></figcaption></figure><figure class="reveal rv rv-light rv-b"><div class="rv-stars" role="img" aria-label="Оцінка 5 з 5"><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg></div><blockquote class="rv-q">«Кошторис затвердили в березні, і він не змінився до самого кінця. Для нас це було важливіше за будь-який дизайн.»</blockquote><figcaption class="rv-person"><span class="rv-av" aria-hidden="true" style="background: #E8E4DC; color: #1C1C1A">ОК</span><span><strong style="display: block; font-weight: 500; font-size: 15px">Олена та Ігор К.</strong><span style="font-size: 13px; color: #5C5A54">Будинок у Козині</span></span></figcaption></figure></div>
+      <div class="rv-col"><figure class="reveal rv rv-photo lazy rv-lypky rv-c"><div class="rv-stars" role="img" aria-label="Оцінка 5 з 5"><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg></div><blockquote class="rv-q">«Найбільше боявся, що ремонт затягнеться на два роки. Ми заїхали на тиждень раніше, ніж обіцяли.»</blockquote><div class="rv-stats"><div><div class="rv-num">11 міс.</div><div class="rv-cap">від договору до ключів</div></div><div><div class="rv-num">186 м²</div><div class="rv-cap">після об'єднання квартир</div></div></div><figcaption class="rv-person"><span class="rv-av" aria-hidden="true" style="background: #3A3935; color: #F3F1EC">АМ</span><span><strong style="display: block; font-weight: 500; font-size: 15px">Андрій М.</strong><span style="font-size: 13px; color: #C9C4BA">Квартира на Липках</span></span></figcaption></figure></div>
+      <div class="rv-col"><figure class="reveal rv rv-light rv-d"><div class="rv-stars" role="img" aria-label="Оцінка 5 з 5"><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#9A7536" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg></div><blockquote class="rv-q">«Архітекторка була на об'єкті щотижня. Будь-яке питання вирішувалось за день, а не за місяць.»</blockquote><figcaption class="rv-person"><span class="rv-av" aria-hidden="true" style="background: #E8E4DC; color: #1C1C1A">НР</span><span><strong style="display: block; font-weight: 500; font-size: 15px">Наталія Р.</strong><span style="font-size: 13px; color: #5C5A54">Квартира на Печерську</span></span></figcaption></figure><figure class="reveal rv rv-photo lazy rv-podil rv-e"><div class="rv-stars" role="img" aria-label="Оцінка 5 з 5"><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg><svg width="16" height="16" viewBox="0 0 16 16" fill="#D9B47A" aria-hidden="true"><path d="M8 1.2 L9.9 5.6 L14.6 6 L11 9.1 L12.1 13.8 L8 11.3 L3.9 13.8 L5 9.1 L1.4 6 L6.1 5.6 Z"></path></svg></div><blockquote class="rv-q">«Роботи з колекції нарешті живуть, а не висять. Світло й вологість продумані до дрібниць.»</blockquote><div class="rv-stats"><div><div class="rv-num">9 міс.</div><div class="rv-cap">реалізація під ключ</div></div><div><div class="rv-num">240 м²</div><div class="rv-cap">пентхаус із галереєю</div></div></div><figcaption class="rv-person"><span class="rv-av" aria-hidden="true" style="background: #3A3935; color: #F3F1EC">ВЛ</span><span><strong style="display: block; font-weight: 500; font-size: 15px">Віктор Л.</strong><span style="font-size: 13px; color: #C9C4BA">Пентхаус на Подолі</span></span></figcaption></figure></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="sec pt pb ph bg-contact lazy" style="padding: 120px 24px; box-sizing: border-box">
+    <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 48px; position: relative">
+      <div style="max-width: 560px">
+        <h2 class="reveal" style="margin: 0 0 20px; font-size: clamp(44px, 5.4vw, 80px); font-weight: 400; letter-spacing: -0.03em; line-height: 0.98; color: #FFFFFF">Розкажіть про <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">свій об'єкт</span></h2>
+        <p class="reveal" style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.</p>
+      </div>
+      <form action="" method="post" data-lead class="reveal glass cform" style="width: 460px; max-width: 100%; border-radius: 26px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Ім'я<input type="text" name="name" autocomplete="name" required placeholder="Як до вас звертатися" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Телефон<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+380" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Тип об'єкта<select name="type" style="font: inherit; font-size: 16px; padding: 14px 12px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"><option>Квартира</option><option>Будинок</option><option>Комерція</option></select></label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Площа, м²<input type="number" name="area" min="1" inputmode="numeric" placeholder="180" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        </div>
+        <button type="submit" class="btn" style="margin-top: 6px; font: inherit; font-size: 16px; font-weight: 500; padding: 16px; border-radius: 999px; border: 0; background: #1C1C1A; color: #F3F1EC; cursor: pointer">Надіслати заявку →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sec" style="max-width: 1360px; margin: 0 auto; padding: 72px 24px 40px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; font-size: 15px; line-height: 1.7">
+      <div><div style="font-weight: 600; letter-spacing: 0.22em">KAMEN</div><div style="color: #5C5A54">Архітектура, яка тримає слово</div></div>
+      <div><a href="tel:+380446435676" style="text-decoration: none">+380 44 643 56 76</a><br><a href="mailto:KAMEN.studio@gmail.com" style="text-decoration: none">KAMEN.studio@gmail.com</a></div>
+      <div>Київ, вул. Липська, 5<br><span style="color: #5C5A54">Пн–Пт, 10:00–19:00</span></div>
+    </div>
+    <div class="reveal ft-word" style="overflow: hidden; white-space: nowrap; margin-top: 56px; font-family: 'Italiana', 'Cormorant Garamond', serif; font-size: clamp(86px, 18.4vw, 282px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: #D3CCBF" aria-hidden="true">KAMEN</div>
+    <div style="margin-top: 24px; font-size: 13px; color: #5C5A54">© 2026 KAMEN Studio</div>
+  </footer>
+  <!-- GALLERY MODAL -->
+  <div id="lb-wrap" hidden>
+  <div class="lb" role="dialog" aria-modal="true" aria-label="Галерея проєкту">
+    <button type="button" class="lb-bg" data-lb="close" aria-label="Закрити галерею" tabindex="-1"></button>
+    <div class="lb-panel glass">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 6px 6px 16px">
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF"><span data-g="label">Квартира · Київ, Липки</span></div>
+          <div style="font-size: clamp(22px, 2.4vw, 30px); font-weight: 500; color: #FFFFFF; margin-top: 6px"><span data-g="title">Тиша в центрі міста</span></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px">
+          <span style="font-size: 14px; color: #FFFFFF; letter-spacing: 0.08em; white-space: nowrap"><span data-g="num">01</span> / 03</span>
+          <button type="button" class="btn-round" data-lb="close" aria-label="Закрити галерею" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: #F3F1EC; cursor: pointer; display: flex; align-items: center; justify-content: center">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="#1C1C1A" stroke-width="1.6" stroke-linecap="round"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="lb-view" id="lb-view">
+        <div class="lb-track" id="lb-track" style="transform: translateX(0%)">
+          <div class="lb-slide g-l1" data-s="0" role="img" aria-label="Фото 1 з 3"></div>
+          <div class="lb-slide g-l2" data-s="1" role="img" aria-label="Фото 2 з 3"></div>
+          <div class="lb-slide g-l3" data-s="2" role="img" aria-label="Фото 3 з 3"></div>
+        </div>
+        <button type="button" class="lb-arrow btn-round" data-lb="prev" aria-label="Попереднє фото" style="left: 14px">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 4 L6 9 L11 14" fill="none" stroke="#1C1C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+        <button type="button" class="lb-arrow btn-round" data-lb="next" aria-label="Наступне фото" style="right: 14px">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M7 4 L12 9 L7 14" fill="none" stroke="#1C1C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 2px; padding-top: 10px">
+        <button type="button" class="lb-dot on" data-go="0" aria-label="Фото 1"></button>
+        <button type="button" class="lb-dot " data-go="1" aria-label="Фото 2"></button>
+        <button type="button" class="lb-dot " data-go="2" aria-label="Фото 3"></button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- FORM MODAL -->
+  <div id="fm-wrap" hidden>
+  <div class="lb" role="dialog" aria-modal="true" aria-labelledby="fm-title">
+    <button type="button" class="lb-bg" data-fm="close" aria-label="Закрити форму" tabindex="-1"></button>
+    <div class="fm-panel">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+        <h2 id="fm-title" style="margin: 0; font-size: clamp(30px, 3.4vw, 44px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Розкажіть про <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">свій об'єкт</span></h2>
+        <button type="button" class="btn-round" data-fm="close" aria-label="Закрити форму" style="flex: 0 0 48px; width: 48px; height: 48px; border-radius: 50%; border: 0; background: #1C1C1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="#F3F1EC" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
+      <p style="margin: 14px 0 22px; font-size: 16px; line-height: 1.5; color: #3E3C37">Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.</p>
+      <form action="" method="post" data-lead class="fm-form" style="display: flex; flex-direction: column; gap: 14px">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Ім'я<input type="text" name="name" autocomplete="name" required placeholder="Як до вас звертатися" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Телефон<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+380" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Тип об'єкта<select name="type" style="font: inherit; font-size: 16px; padding: 14px 12px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"><option>Квартира</option><option>Будинок</option><option>Комерція</option></select></label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Площа, м²<input type="number" name="area" min="1" inputmode="numeric" placeholder="180" style="font: inherit; font-size: 16px; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(28,28,26,0.18); background: rgba(255,255,255,0.7)"></label>
+        </div>
+        <button type="submit" class="btn" style="margin-top: 6px; font: inherit; font-size: 16px; font-weight: 500; padding: 16px; border-radius: 999px; border: 0; background: #1C1C1A; color: #F3F1EC; cursor: pointer">Надіслати заявку →</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+<script>
+(function () {
+  // hero video, scroll-driven: the hero sticks and the video frame follows the scroll position
+  var hv = document.getElementById('hero-video'), heroTrack = document.getElementById('hero-track');
+  var heroIn = document.querySelector('#hero .hero-in'), hint = document.querySelector('.scroll-hint');
+  if (hv && heroTrack) {
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var save = navigator.connection && navigator.connection.saveData;
+    if (!calm && !save) {
+      var w = Math.min(screen.width, innerWidth) <= 760 ? 720 : 1280;
+      hv.src = 'https://res.cloudinary.com/gpjwnj6x/video/upload/ki_0.1,w_' + w + ',q_auto/' + hv.getAttribute('data-tail');
+      var cur = 0, shown = -1, ticking = false;
+      function progress() {
+        var top = heroTrack.getBoundingClientRect().top, range = heroTrack.offsetHeight - 2 * innerHeight; // last 100vh is the slide-over
+        return range > 0 ? Math.min(1, Math.max(0, -top / range)) : 0;
+      }
+      function frame() {
+        var d = isFinite(hv.duration) && hv.duration > 0 ? hv.duration : 0;
+        var p = progress(), target = p * Math.max(0, d - 0.05);
+        if (!isFinite(cur)) cur = target;
+        cur += (target - cur) * 0.2;
+        if (Math.abs(target - cur) < 0.002) cur = target;
+        if (Math.abs(cur - shown) > 0.008 && !hv.seeking) { hv.currentTime = cur; shown = cur; }
+        if (heroIn) heroIn.style.transform = 'translateY(' + (-p * 48).toFixed(1) + 'px)';
+        if (hint) hint.style.opacity = p > 0.03 ? '0' : '1';
+        if (cur !== target || hv.seeking || !d) requestAnimationFrame(frame); else ticking = false;
+      }
+      function kick() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+      function startLoop() {
+        hv.loop = true; hv.addEventListener('playing', function () { hv.classList.add('ready'); });
+        var pp = hv.play(); if (pp && pp.catch) pp.catch(function () {});
+      }
+      hv.addEventListener('loadedmetadata', function () {
+        // switch to scroll mode only while the visitor is still at the top, so nothing jumps under them
+        if (scrollY < innerHeight * 0.3) {
+          document.documentElement.classList.add('scrub');
+          var pp = hv.play(); // unlocks frame painting on iOS, then hand control to the scroll
+          if (pp && pp.then) pp.then(function () { hv.pause(); kick(); }).catch(function () { kick(); }); else { hv.pause(); kick(); }
+          hv.addEventListener('seeked', function once() { hv.classList.add('ready'); hv.removeEventListener('seeked', once); });
+          addEventListener('scroll', kick, { passive: true });
+          addEventListener('resize', kick);
+        } else startLoop();
+      }, { once: true });
+    }
+  }
+  // mobile menu
+  var burger = document.getElementById('burger'), menu = document.querySelector('.m-menu');
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Закрити меню' : 'Відкрити меню');
+  }
+  burger.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+  document.querySelectorAll('[data-close]').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); closeGal(); closeForm(); } });
+  // project gallery modal
+  var GAL = [
+    { label: 'Квартира · Київ, Липки', title: 'Тиша в центрі міста', imgs: ['g-l1', 'g-l2', 'g-l3'] },
+    { label: 'Будинок · Козин', title: 'Дім, що відкривається до лісу', imgs: ['g-k1', 'g-k2', 'g-k3'] },
+    { label: 'Пентхаус · Поділ', title: 'Лофт для колекціонера', imgs: ['g-p1', 'g-p2', 'g-p3'] }
+  ];
+  var wrap = document.getElementById('lb-wrap'), track = document.getElementById('lb-track'), view = document.getElementById('lb-view');
+  var slides = wrap.querySelectorAll('.lb-slide'), dots = wrap.querySelectorAll('.lb-dot');
+  var gi = 0, opener = null;
+  function goTo(k) {
+    gi = (k + 3) % 3;
+    track.style.transform = 'translateX(' + (-100 * gi) + '%)';
+    wrap.querySelector('[data-g="num"]').textContent = '0' + (gi + 1);
+    dots.forEach(function (d, j) { d.classList.toggle('on', j === gi); });
+  }
+  function openGal(k, btn) {
+    var G = GAL[k];
+    wrap.querySelector('[data-g="label"]').textContent = G.label;
+    wrap.querySelector('[data-g="title"]').textContent = G.title;
+    slides.forEach(function (sl, j) { sl.className = 'lb-slide ' + G.imgs[j]; });
+    track.style.transition = 'none'; goTo(0); void track.offsetWidth; track.style.transition = '';
+    opener = btn; wrap.hidden = false; document.body.style.overflow = 'hidden';
+    setMenu(false);
+    wrap.querySelector('.lb-panel [data-lb="close"]').focus();
+  }
+  function closeGal() {
+    if (wrap.hidden) return;
+    wrap.hidden = true; document.body.style.overflow = '';
+    if (opener) opener.focus();
+  }
+  document.querySelectorAll('[data-open]').forEach(function (b) {
+    b.addEventListener('click', function () { openGal(+b.getAttribute('data-open'), b); });
+  });
+  wrap.querySelectorAll('[data-lb]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var a = b.getAttribute('data-lb');
+      if (a === 'close') closeGal(); else goTo(gi + (a === 'next' ? 1 : -1));
+    });
+  });
+  dots.forEach(function (d) { d.addEventListener('click', function () { goTo(+d.getAttribute('data-go')); }); });
+  document.addEventListener('keydown', function (e) {
+    if (wrap.hidden) return;
+    if (e.key === 'ArrowRight') goTo(gi + 1);
+    else if (e.key === 'ArrowLeft') goTo(gi - 1);
+    else if (e.key === 'Tab') {
+      var f = wrap.querySelectorAll('.lb-panel button'), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  // swipe: finger or mouse drag, the track follows the pointer
+  var x0 = null, w = 1;
+  view.addEventListener('pointerdown', function (e) {
+    if (e.target.closest('button')) return;
+    x0 = e.clientX; w = view.offsetWidth; track.style.transition = 'none';
+    view.setPointerCapture(e.pointerId);
+  });
+  view.addEventListener('pointermove', function (e) {
+    if (x0 === null) return;
+    track.style.transform = 'translateX(calc(' + (-100 * gi) + '% + ' + (e.clientX - x0) + 'px))';
+  });
+  function endDrag(e) {
+    if (x0 === null) return;
+    var dx = e.clientX - x0; x0 = null; track.style.transition = '';
+    if (Math.abs(dx) > Math.min(80, w * 0.15)) goTo(gi + (dx < 0 ? 1 : -1)); else goTo(gi);
+  }
+  view.addEventListener('pointerup', endDrag);
+  view.addEventListener('pointercancel', endDrag);
+  // projects: depth carousel on touch layouts (dots + fallback for browsers without scroll-driven animations)
+  var pg = document.getElementById('pgrid'), pdots = document.querySelectorAll('.pc-dots span');
+  if (pg) {
+    var mq = matchMedia('(max-width: 1024px)');
+    var native = window.CSS && CSS.supports('animation-timeline: view()');
+    var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cards = Array.prototype.slice.call(pg.children);
+    var pTick = false;
+    function depth() {
+      pTick = false;
+      var r = pg.getBoundingClientRect(), mid = r.left + r.width / 2, best = 0, bd = 1e9;
+      cards.forEach(function (c, k) {
+        var cr = c.getBoundingClientRect(), o = (cr.left + cr.width / 2 - mid) / cr.width;
+        if (Math.abs(o) < bd) { bd = Math.abs(o); best = k; }
+        if (!native && !still && mq.matches) {
+          var t = Math.max(-1, Math.min(1, o));
+          c.style.transform = 'rotateY(' + (-t * 34).toFixed(1) + 'deg) scale(' + (1 - Math.abs(t) * 0.18).toFixed(3) + ')';
+          c.style.opacity = (1 - Math.abs(t) * 0.45).toFixed(2);
+          c.style.zIndex = String(3 - Math.round(Math.abs(t) * 2));
+        } else if (!native) { c.style.transform = ''; c.style.opacity = ''; }
+      });
+      pdots.forEach(function (d, k) { d.classList.toggle('on', k === best); });
+    }
+    function pKick() { if (!pTick) { pTick = true; requestAnimationFrame(depth); } }
+    pg.addEventListener('scroll', pKick, { passive: true });
+    addEventListener('resize', pKick);
+    depth();
+  }
+  // stats: count up together (easeOut, 1.5 s) when the row enters the viewport
+  var statRow = document.querySelector('.nums'), statNums = document.querySelectorAll('.num[data-to]');
+  if (statRow && statNums.length && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    function paint(e) {
+      statNums.forEach(function (n) {
+        n.textContent = n.getAttribute('data-prefix') + Math.round(+n.getAttribute('data-to') * e) + n.getAttribute('data-suffix');
+      });
+    }
+    paint(0);
+    var sio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      sio.disconnect();
+      var t0 = performance.now();
+      (function step(t) {
+        var k = Math.min(1, (t - t0) / 1500);
+        paint(1 - Math.pow(1 - k, 3));
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    }, { threshold: 1, rootMargin: '0px 0px -25% 0px' }); // whole row visible, in the upper 75% of the screen
+    sio.observe(statRow);
+  }
+  // stages: slide in one by one from the left (5 s in total) once the list is on screen
+  var stagesList = document.querySelector('.stages');
+  if (stagesList && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    stagesList.classList.add('armed');
+    var stio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      stio.disconnect();
+      stagesList.classList.remove('armed'); stagesList.classList.add('go');
+      setTimeout(function () { stagesList.classList.remove('go'); stagesList.classList.add('done'); }, 5100);
+    }, { rootMargin: '0px 0px -30% 0px' });
+    stio.observe(stagesList);
+  }
+  // lead form modal (header CTA and the CTA in the mobile menu)
+  var fm = document.getElementById('fm-wrap'), fmOpener = null;
+  function openForm(btn) {
+    fmOpener = btn; setMenu(false); fm.hidden = false; document.body.style.overflow = 'hidden';
+    var first = fm.querySelector('.fm-form input'); if (first) first.focus();
+  }
+  function closeForm() {
+    if (fm.hidden) return;
+    fm.hidden = true; document.body.style.overflow = '';
+    if (fmOpener && fmOpener.offsetParent !== null) fmOpener.focus();
+  }
+  document.querySelectorAll('[data-form-open]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); openForm(a); });
+  });
+  fm.querySelectorAll('[data-fm="close"]').forEach(function (b) { b.addEventListener('click', closeForm); });
+  document.addEventListener('keydown', function (e) {
+    if (fm.hidden || e.key !== 'Tab') return;
+    var f = fm.querySelectorAll('.fm-panel button, .fm-panel input, .fm-panel select'), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+  // header: highlight the section currently on screen
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['projects', 'approach', 'studio', 'contact'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+  var heroEl = document.getElementById('hero');
+  new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) links.forEach(function (a) { a.classList.remove('active'); });
+  }, { rootMargin: '-45% 0px -50% 0px' }).observe(heroEl);
+  // scroll reveal fallback for browsers without scroll-driven animations
+  if (!(window.CSS && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-io');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+<script>
+(function () {
+  // lazy background photos
+  var lazy = document.querySelectorAll('.lazy');
+  if ('IntersectionObserver' in window) {
+    var lio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (!e.isIntersecting) return; var grp = e.target.classList.contains('pcard') ? document.querySelectorAll('.pcard.lazy') : [e.target]; Array.prototype.forEach.call(grp, function (el) { el.classList.remove('lazy'); lio.unobserve(el); }); });
+    }, { rootMargin: '800px 800px' });
+    lazy.forEach(function (el) { lio.observe(el); });
+  } else lazy.forEach(function (el) { el.classList.remove('lazy'); });
+
+  // lead forms
+  // TODO: вкажіть адресу обробника заявок, напр. Formspree: 'https://formspree.io/f/XXXXXXX'
+  var FORM_ENDPOINT = '';
+  var FALLBACK = 'Форма поки не підключена. Зателефонуйте нам: +380 44 643 56 76';
+  document.querySelectorAll('form[data-lead]').forEach(function (f) {
+    var st = f.querySelector('.form-status'), btn = f.querySelector('button[type=submit]');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      st.className = 'form-status'; st.textContent = '';
+      if (!FORM_ENDPOINT) { st.classList.add('err'); st.textContent = FALLBACK; return; }
+      btn.disabled = true;
+      fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          st.classList.add('ok'); st.textContent = 'Дякуємо! Ми зателефонуємо вам протягом робочого дня.'; f.reset();
+        })
+        .catch(function () { st.classList.add('err'); st.textContent = 'Не вдалося надіслати. ' + FALLBACK.split('. ')[1]; })
+        .then(function () { btn.disabled = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
