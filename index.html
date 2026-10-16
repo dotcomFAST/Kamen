@@ -33,7 +33,7 @@
 <!-- Meta Pixel: вставити тут -->
 <title>KAMEN — архітектура, яка тримає слово</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&amp;family=Cormorant+Garamond:ital,wght@1,400;1,500&amp;family=Italiana&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&amp;family=Italiana&amp;display=swap" rel="stylesheet">
 <style>
 :root{--img-42a980d8:url(hero.webp);--img-b2c358b3:url(card-lypky.webp);--img-e2f5fee7:url(g-lypky-2.webp);--img-0c616aff:url(g-lypky-3.webp);--img-c3bad232:url(card-kozyn.webp);--img-ad6ba169:url(g-kozyn-2.webp);--img-5a8c666d:url(g-kozyn-3.webp);--img-45b11e85:url(card-podil.webp);--img-b79b0eba:url(g-podil-2.webp);--img-3b0e3077:url(g-podil-3.webp);--img-86549867:url(review-lypky.webp);--img-7ab8f033:url(review-podil.webp);--img-5afc09e2:url(guarantees.webp);--img-c2f1f6ee:url(guarantees-m.webp);--img-3fb8d6fc:url(contact.webp);--img-4e570506:url(contact-m.webp);}
 html{scroll-behavior:smooth}
@@ -46,7 +46,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 .glass{background:rgba(255,255,255,0.28);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border:1px solid rgba(255,255,255,0.55);box-shadow:0 8px 32px rgba(28,28,26,0.10)}
 .glass-dark{background:rgba(28,28,26,0.30);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.22)}
 .ph{position:relative;overflow:hidden;background-color:#B9B2A6}
-.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,20,18,.30) 0%,rgba(20,20,18,.05) 35%,rgba(20,20,18,.45) 100%)}
+.hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% 55%,rgba(20,20,18,.38) 0%,rgba(20,20,18,.12) 70%),linear-gradient(180deg,rgba(20,20,18,.30) 0%,rgba(20,20,18,.10) 40%,rgba(20,20,18,.35) 100%)}
 .hero-video{opacity:0;transition:opacity 1s ease;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
 .bg-hero,.bg-lypky,.bg-kozyn,.bg-podil,.bg-guar,.bg-bed,.bg-contact{background-size:cover;background-position:center}
 .bg-hero{background-image:var(--img-42a980d8)}
@@ -92,7 +92,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   .sec.pb{padding-bottom:100px !important}
   .pcard{height:520px !important}
   .hdr-cta{margin-left:auto}
-  .hero-shade{background:linear-gradient(180deg,rgba(20,20,18,0.25) 0%,rgba(20,20,18,0.20) 35%,rgba(20,20,18,0.62) 100%)}
+  .hero-shade{background:radial-gradient(ellipse 90% 60% at 50% 55%,rgba(20,20,18,.42) 0%,rgba(20,20,18,.18) 75%),linear-gradient(180deg,rgba(20,20,18,0.25) 0%,rgba(20,20,18,0.15) 40%,rgba(20,20,18,0.40) 100%)}
   .pgrid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
   .pgrid > :last-child{grid-column:1 / -1}
   .num{font-size:56px !important}
@@ -105,7 +105,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   .hero{height:auto !important;min-height:100svh;padding:12px !important}
   .hero-in{padding:120px 8px 8px !important}
   .hero-row{margin-top:24px !important;gap:24px !important}
-  .a-word{font-size:27vw !important}
+  .a-word{font-size:25vw !important}
   .ft-word{font-size:26vw !important}
   .sec{padding-left:16px !important;padding-right:16px !important}
   .sec.pt{padding-top:72px !important}
@@ -229,6 +229,24 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 .stages.go::before{opacity:1;animation:k-line 5s linear both}
 .stages.go .stage{animation:k-stage 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 1s)}
 .stages.done::before{opacity:1;transform:scaleX(1)}
+.acc{font-weight:300;opacity:.62}
+h1 .acc{display:block}
+button,input,select,textarea{font-family:inherit}
+.hdr-rail .hdr{box-sizing:border-box;max-width:1312px;margin-left:auto;margin-right:auto}
+@media (max-width: 640px){.hdr-rail{padding:0 16px !important}}
+.svc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.svc{display:flex;flex-direction:column;margin:0;padding:28px;border-radius:24px;background:rgba(255,255,255,0.62);border:1px solid #E2DDD3;box-sizing:border-box;min-height:100%}
+.svc-tag{align-self:flex-start;font-size:12px;letter-spacing:0.04em;padding:7px 12px;border-radius:999px;border:1px solid #D6D0C5;color:#5C5A54}
+.svc-title{margin:56px 0 12px;font-size:24px;font-weight:500;letter-spacing:-0.02em;line-height:1.1}
+.svc-text{margin:0 0 24px;font-size:15px;line-height:1.5;color:#5C5A54}
+.svc-list{list-style:none;margin:auto 0 0;padding:0;font-size:14px;line-height:1.4}
+.svc-list li{padding:12px 0;border-top:1px solid #E2DDD3}
+.svc-dark{background:#1C1C1A;border-color:#1C1C1A;color:#F3F1EC}
+.svc-dark .svc-tag{border-color:rgba(243,241,236,0.28);color:#F3F1EC}
+.svc-dark .svc-text{color:rgba(243,241,236,0.72)}
+.svc-dark .svc-list li{border-color:rgba(243,241,236,0.16)}
+@media (max-width: 1024px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.svc-title{margin-top:40px}}
+@media (max-width: 640px){.svc-grid{grid-template-columns:minmax(0,1fr);gap:12px}.svc{padding:22px}.svc-title{margin-top:28px;font-size:22px}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none !important;transition:none !important}.js-io .reveal{opacity:1;transform:none}}
 .ph-tag{position:absolute;left:16px;bottom:16px;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#1C1C1A;background:rgba(255,255,255,0.7);padding:6px 10px;border-radius:999px}
 </style>
@@ -269,7 +287,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 <div id="top" style="font-family: 'Onest', system-ui, sans-serif; color: #1C1C1A; background: #F3F1EC; min-height: 100vh">
 
   <!-- STICKY HEADER: zero-height sticky rail, so the hero still starts at the very top -->
-  <div style="position: sticky; top: 0; z-index: 50; height: 0; padding: 0 20px; display: flow-root">
+  <div class="hdr-rail" style="position: sticky; top: 0; z-index: 50; height: 0; padding: 0 24px; display: flow-root">
     <header class="a-down glass hdr" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px 14px 28px; border-radius: 20px; margin-top: 20px">
       <a href="#top" class="nav-logo" style="text-decoration: none; display: flex; align-items: center; gap: 12px">
         <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 19 L11 3 L19 19 Z" fill="none" stroke="#1C1C1A" stroke-width="1.6"></path><path d="M7 19 L11 11 L15 19" fill="none" stroke="#1C1C1A" stroke-width="1.6"></path></svg>
@@ -277,6 +295,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
       </a>
       <nav class="nav-desk" aria-label="Головне меню" style="display: flex; flex-wrap: wrap; gap: 6px">
         <a href="#projects" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Проєкти</a>
+        <a href="#services" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Послуги</a>
         <a href="#approach" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Підхід</a>
         <a href="#studio" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Студія</a>
         <a href="#contact" class="nav-link" style="text-decoration: none; font-size: 14px; padding: 12px 18px; border-radius: 999px">Контакти</a>
@@ -291,6 +310,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
     </header>
     <div class="m-menu glass hdr " style="margin-top: 8px; border-radius: 20px; padding: 10px; flex-direction: column; gap: 2px">
       <a href="#projects" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Проєкти</a>
+      <a href="#services" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Послуги</a>
       <a href="#approach" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Підхід</a>
       <a href="#studio" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Студія</a>
       <a href="#contact" data-close class="m-link" style="text-decoration: none; font-size: 22px; padding: 14px 16px; border-radius: 14px">Контакти</a>
@@ -304,14 +324,14 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
     <video class="hero-video" id="hero-video" muted playsinline preload="auto" aria-hidden="true" tabindex="-1" data-tail="v1791912272/hailuo-03_Smooth_cinematic_camera_dolly_out_and_subtle_pan_to_the_right_revealing_more_of_-0.mp4"></video>
     <div class="hero-shade" aria-hidden="true"></div>
 
-    <div class="hero-in" style="z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; max-width: 1360px; width: 100%; margin: 0 auto; padding: 0 24px 24px; box-sizing: border-box; position: relative">
-      <div class="a-word" style="font-family: 'Italiana', 'Cormorant Garamond', serif; font-size: clamp(68px, 22.5vw, 356px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: rgba(255,255,255,0.92)">KAMEN</div>
-      <div class="hero-row" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; margin-top: 40px">
-        <div style="max-width: 560px">
+    <div class="hero-in" style="z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: safe center; align-items: center; text-align: center; max-width: 1360px; width: 100%; margin: 0 auto; padding: 96px 24px 24px; box-sizing: border-box; position: relative">
+      <div class="a-word" style="font-family: 'Italiana', serif; font-size: clamp(68px, min(22.5vw, 31svh), 356px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: rgba(255,255,255,0.92)">KAMEN</div>
+      <div class="hero-row" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px; margin-top: 40px">
+        <div style="max-width: 720px; display: flex; flex-direction: column; align-items: center">
           <p class="a-up d1" style="margin: 0 0 12px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF">Архітектурне бюро · Київ · з 2015</p>
-          <h1 class="a-up d2" style="margin: 0; font-size: clamp(36px, 4.2vw, 60px); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF">Архітектура, яка <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15em">тримає слово</span></h1>
-          <p class="a-up d3" style="margin: 18px 0 28px; font-size: 17px; line-height: 1.5; color: #FFFFFF; max-width: 480px">Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.</p>
-          <div class="a-up d4" style="display: flex; flex-wrap: wrap; gap: 10px">
+          <h1 class="a-up d2" style="margin: 0; font-size: clamp(42px, 4.8vw, 76px); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; color: #FFFFFF">Архітектура, яка <span class="acc">тримає слово</span></h1>
+          <p class="a-up d3" style="margin: 18px 0 28px; font-size: 17px; line-height: 1.5; color: #FFFFFF; max-width: 520px">Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.</p>
+          <div class="a-up d4" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
             <a href="#projects" class="btn" style="text-decoration: none; font-size: 15px; font-weight: 500; padding: 15px 26px; border-radius: 999px; background: #F3F1EC; color: #1C1C1A">Дивитися проєкти</a>
             <a href="#contact" class="btn glass" style="text-decoration: none; font-size: 15px; padding: 15px 26px; border-radius: 999px; color: #FFFFFF">Обговорити проєкт</a>
           </div>
@@ -327,7 +347,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   <div class="next-panel">
   <section id="projects" class="sec pt pb" style="max-width: 1360px; margin: 0 auto; padding: 140px 24px 140px; box-sizing: border-box">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
-      <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Кожен проєкт — <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">історія з цифрами</span></h2>
+      <h2 class="reveal" style="margin: 0; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Кожен проєкт — <span class="acc">історія з цифрами</span></h2>
       <a href="#projects" class="btn" style="text-decoration: none; font-size: 15px; font-weight: 500; padding: 14px 24px; border-radius: 999px; border: 1px solid #1C1C1A">Усі проєкти →</a>
     </div>
     <div class="pgrid" id="pgrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px">
@@ -386,16 +406,50 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   </section>
 
   <!-- PHILOSOPHY -->
-  <section class="sec pb" style="max-width: 1120px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
-    <div class="reveal" style="display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5C5A54; margin-bottom: 28px"><span>(Наш підхід)</span><span style="flex: 0 0 120px; height: 1px; background: #BDB7AC"></span></div>
-    <p class="reveal" style="margin: 0; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.18; letter-spacing: -0.02em; font-weight: 400">Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це <span style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.12em">фіксований кошторис</span>, точний графік і один архітектор від першого ескізу до ключів.</p>
+  <section class="sec pb" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
+    <p class="reveal" style="margin: 0; font-size: clamp(24px, 2.8vw, 42px); line-height: 1.22; letter-spacing: -0.02em; font-weight: 400">Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це <span class="acc">фіксований кошторис</span>, точний графік і один архітектор від першого ескізу до ключів.</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="sec pb" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+      <div>
+        <h2 class="reveal" style="margin: 0; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Що ми робимо <span class="acc">від ескізу до ключів</span></h2>
+      </div>
+      <p class="reveal" style="margin: 0; max-width: 420px; font-size: 16px; line-height: 1.5; color: #5C5A54">Можна замовити окремий етап або весь цикл — з одним договором і одним відповідальним.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="reveal lift svc">
+        <span class="svc-tag">від 8 тижнів</span>
+        <h3 class="svc-title">Архітектурне проєктування</h3>
+        <p class="svc-text">Приватні будинки й реконструкції — від аналізу ділянки до робочої документації.</p>
+        <ul class="svc-list"><li>Аналіз ділянки та містобудівні умови</li><li>Ескізний і робочий проєкт</li><li>Інженерні розділи та погодження</li></ul>
+      </article>
+      <article class="reveal lift svc">
+        <span class="svc-tag">від 6 тижнів</span>
+        <h3 class="svc-title">Дизайн інтер'єру</h3>
+        <p class="svc-text">Простір, у якому кожне рішення має пояснення і ціну ще до початку робіт.</p>
+        <ul class="svc-list"><li>Планування та 3D-візуалізації</li><li>Креслення, розгортки, специфікації</li><li>Підбір матеріалів і меблів</li></ul>
+      </article>
+      <article class="reveal lift svc svc-dark">
+        <span class="svc-tag">Повний цикл</span>
+        <h3 class="svc-title">Ремонт під ключ</h3>
+        <p class="svc-text">Проєктуємо й будуємо самі — з фіксованим кошторисом і графіком у договорі.</p>
+        <ul class="svc-list"><li>Власні бригади та технагляд</li><li>Фотозвіт і графік щоп'ятниці</li><li>2 роки гарантії на роботи</li></ul>
+      </article>
+      <article class="reveal lift svc">
+        <span class="svc-tag">на весь термін робіт</span>
+        <h3 class="svc-title">Комплектація й нагляд</h3>
+        <p class="svc-text">Для тих, хто вже має підрядника, але хоче результат точно як у проєкті.</p>
+        <ul class="svc-list"><li>Закупівля та логістика матеріалів</li><li>Архітектор на об'єкті щотижня</li><li>Контроль відповідності проєкту</li></ul>
+      </article>
+    </div>
   </section>
 
   <!-- GUARANTEES -->
   <section class="sec pt pb ph bg-guar lazy" style="padding: 120px 24px; box-sizing: border-box">
-    <div style="max-width: 1360px; margin: 0 auto; position: relative">
-      <p class="reveal" style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF">(Гарантії)</p>
-      <h2 class="reveal" style="margin: 0 0 56px; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; color: #FFFFFF; max-width: 860px">Три речі, які ми <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">прописуємо в договорі</span></h2>
+    <div style="max-width: 1312px; margin: 0 auto; position: relative">
+      <h2 class="reveal" style="margin: 0 0 56px; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 1; color: #FFFFFF; max-width: 860px">Три речі, які ми <span class="acc">прописуємо в договорі</span></h2>
       <div class="ggrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
         <div class="reveal glass gcard" style="border-radius: 24px; padding: 32px">
           <div><h3 style="font-size: 26px; font-weight: 500; margin: 0 0 10px">Фіксований кошторис</h3><div style="font-size: 16px; line-height: 1.5">Після затвердження проєкту ціна не росте. Зміни можливі лише з вашої ініціативи.</div></div>
@@ -413,7 +467,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   <!-- PROCESS -->
   <section id="approach" class="sec pt pb" style="max-width: 1360px; margin: 0 auto; padding: 140px 24px; box-sizing: border-box">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px">
-      <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">П'ять етапів <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">без сюрпризів</span></h2>
+      <h2 class="reveal" style="margin: 0; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">П'ять етапів <span class="acc">без сюрпризів</span></h2>
       <a href="#approach" style="font-size: 15px; font-weight: 500">Детальніше про підхід →</a>
     </div>
     <ol class="stages" style="position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid #CFC9BE">
@@ -429,8 +483,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
   <section id="studio" class="sec pb" style="max-width: 1360px; margin: 0 auto; padding: 0 24px 140px; box-sizing: border-box">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
       <div>
-        <div class="reveal" style="display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #5C5A54; margin-bottom: 20px"><span>(Відгуки)</span><span style="flex: 0 0 120px; height: 1px; background: #BDB7AC"></span></div>
-        <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 5vw, 72px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Що кажуть <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">власники</span></h2>
+        <h2 class="reveal" style="margin: 0; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Що кажуть <span class="acc">власники</span></h2>
       </div>
     </div>
     <div class="rv-grid">
@@ -442,9 +495,9 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 
   <!-- CTA -->
   <section id="contact" class="sec pt pb ph bg-contact lazy" style="padding: 120px 24px; box-sizing: border-box">
-    <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 48px; position: relative">
+    <div style="max-width: 1312px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 48px; position: relative">
       <div style="max-width: 560px">
-        <h2 class="reveal" style="margin: 0 0 20px; font-size: clamp(44px, 5.4vw, 80px); font-weight: 400; letter-spacing: -0.03em; line-height: 0.98; color: #FFFFFF">Розкажіть про <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">свій об'єкт</span></h2>
+        <h2 class="reveal" style="margin: 0 0 20px; font-size: clamp(32px, 3.6vw, 56px); font-weight: 400; letter-spacing: -0.03em; line-height: 0.98; color: #FFFFFF">Розкажіть про <span class="acc">свій об'єкт</span></h2>
         <p class="reveal" style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF">Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.</p>
       </div>
       <form action="" method="post" data-lead class="reveal glass cform" style="width: 460px; max-width: 100%; border-radius: 26px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
@@ -467,7 +520,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
       <div><a href="tel:+380446435676" style="text-decoration: none">+380 44 643 56 76</a><br><a href="mailto:KAMEN.studio@gmail.com" style="text-decoration: none">KAMEN.studio@gmail.com</a></div>
       <div>Київ, вул. Липська, 5<br><span style="color: #5C5A54">Пн–Пт, 10:00–19:00</span></div>
     </div>
-    <div class="reveal ft-word" style="overflow: hidden; white-space: nowrap; margin-top: 56px; font-family: 'Italiana', 'Cormorant Garamond', serif; font-size: clamp(86px, 18.4vw, 282px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: #D3CCBF" aria-hidden="true">KAMEN</div>
+    <div class="reveal ft-word" style="overflow: hidden; white-space: nowrap; margin-top: 56px; font-family: 'Italiana', serif; font-size: clamp(86px, 18.4vw, 282px); font-weight: 400; letter-spacing: 0.02em; line-height: 0.8; color: #D3CCBF" aria-hidden="true">KAMEN</div>
     <div style="margin-top: 24px; font-size: 13px; color: #5C5A54">© 2026 KAMEN Studio</div>
   </footer>
   <!-- GALLERY MODAL -->
@@ -514,7 +567,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
     <button type="button" class="lb-bg" data-fm="close" aria-label="Закрити форму" tabindex="-1"></button>
     <div class="fm-panel">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
-        <h2 id="fm-title" style="margin: 0; font-size: clamp(30px, 3.4vw, 44px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Розкажіть про <span style="font-family: 'Cormorant Garamond', serif; font-style: italic">свій об'єкт</span></h2>
+        <h2 id="fm-title" style="margin: 0; font-size: clamp(30px, 3.4vw, 44px); font-weight: 400; letter-spacing: -0.03em; line-height: 1">Розкажіть про <span class="acc">свій об'єкт</span></h2>
         <button type="button" class="btn-round" data-fm="close" aria-label="Закрити форму" style="flex: 0 0 48px; width: 48px; height: 48px; border-radius: 50%; border: 0; background: #1C1C1A; cursor: pointer; display: flex; align-items: center; justify-content: center">
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="#F3F1EC" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </button>
@@ -747,7 +800,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
       links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); });
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['projects', 'approach', 'studio', 'contact'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+  ['projects', 'services', 'approach', 'studio', 'contact'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
   var heroEl = document.getElementById('hero');
   new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) links.forEach(function (a) { a.classList.remove('active'); });
@@ -797,7 +850,7 @@ a{color:#1C1C1A}a:hover{color:#4A5A3C}
 </script>
 <script>
 (function () {
-  var EN = {"Проєкти": "Projects", "Підхід": "Approach", "Студія": "Studio", "Контакти": "Contact", "Обговорити проєкт": "Discuss a project", "Обговорити проєкт →": "Discuss a project →", "Архітектурне бюро · Київ · з 2015": "Architecture studio · Kyiv · since 2015", "Архітектура, яка": "Architecture that", "тримає слово": "keeps its word", "Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.": "We design and build private residences. Budget and timeline are fixed in the contract, and every week of delay is on us.", "Дивитися проєкти": "View projects", "Гортайте": "Scroll", "Кожен проєкт —": "Every project —", "історія з цифрами": "a story in numbers", "Усі проєкти →": "All projects →", "3 фото": "3 photos", "Квартира · Липки": "Apartment · Lypky", "Квартира · Київ, Липки": "Apartment · Kyiv, Lypky", "Тиша в центрі міста": "Silence in the city centre", "−24 дБ шуму": "−24 dB noise", "Будинок · Козин": "House · Kozyn", "Будинок · Київщина, Козин": "House · Kyiv region, Kozyn", "Дім, що відкривається до лісу": "A home that opens onto the forest", "СЕС 15 кВт": "15 kW solar", "Пентхаус · Поділ": "Penthouse · Podil", "Пентхаус · Київ, Поділ": "Penthouse · Kyiv, Podil", "Лофт для колекціонера": "A loft for a collector", "Музейне світло": "Museum-grade light", "років на ринку": "years in business", "завершені об'єкти": "completed projects", "здано в договірний термін": "delivered on the contract date", "середнє відхилення від кошторису": "average deviation from budget", "(Наш підхід)": "(Our approach)", "Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це": "We speak in numbers, not adjectives. Every project comes with a", "фіксований кошторис": "fixed budget", ", точний графік і один архітектор від першого ескізу до ключів.": ", a precise schedule and one architect from the first sketch to the keys.", "(Гарантії)": "(Guarantees)", "Три речі, які ми": "Three things we", "прописуємо в договорі": "put in the contract", "Фіксований кошторис": "Fixed budget", "Після затвердження проєкту ціна не росте. Зміни можливі лише з вашої ініціативи.": "Once the design is approved, the price doesn't grow. Changes happen only at your request.", "Фіксований термін": "Fixed timeline", "За кожен тиждень затримки з нашої вини повертаємо 0,5% вартості робіт.": "For every week of delay on our side, we refund 0.5% of the cost of works.", "Один відповідальний": "One person in charge", "Ваш архітектор веде об'єкт від першого ескізу до передачі ключів.": "Your architect leads the project from the first sketch to the handover of keys.", "П'ять етапів": "Five stages", "без сюрпризів": "no surprises", "Детальніше про підхід →": "More about our approach →", "Знайомство": "Introduction", "Виїзд на об'єкт, обміри, орієнтовний бюджет.": "Site visit, measurements, a ballpark budget.", "Концепція": "Concept", "Планування, матеріали, простір у 3D.": "Layout, materials, the space in 3D.", "Проєкт і кошторис": "Design & budget", "Креслення, специфікації, фіксована ціна в договорі.": "Drawings, specifications, a fixed price in the contract.", "Будівництво": "Construction", "Архітектор щотижня на об'єкті, фотозвіт щоп'ятниці.": "The architect is on site every week, with a photo report every Friday.", "Передача": "Handover", "Комплектація, ключі та 2 роки гарантії.": "Furnishing, keys and a 2-year warranty.", "(Відгуки)": "(Reviews)", "Що кажуть": "What our", "власники": "owners say", "«Щоп'ятниці — фотозвіт і оновлений графік. За рік будівництва я жодного разу не їздив на об'єкт без потреби.»": "“Every Friday: a photo report and an updated schedule. In a year of construction I never once had to drive to the site for nothing.”", "ДС": "DS", "Дмитро С.": "Dmytro S.", "Будинок у Конча-Заспі": "House in Koncha-Zaspa", "«Кошторис затвердили в березні, і він не змінився до самого кінця. Для нас це було важливіше за будь-який дизайн.»": "“The budget was approved in March and didn't change until the very end. For us that mattered more than any design.”", "ОК": "OK", "Олена та Ігор К.": "Olena & Ihor K.", "Будинок у Козині": "House in Kozyn", "«Найбільше боявся, що ремонт затягнеться на два роки. Ми заїхали на тиждень раніше, ніж обіцяли.»": "“My biggest fear was the renovation dragging on for two years. We moved in a week earlier than promised.”", "від договору до ключів": "from contract to keys", "після об'єднання квартир": "after merging two apartments", "АМ": "AM", "Андрій М.": "Andrii M.", "Квартира на Липках": "Apartment in Lypky", "«Архітекторка була на об'єкті щотижня. Будь-яке питання вирішувалось за день, а не за місяць.»": "“The architect was on site every week. Any question was settled in a day, not a month.”", "НР": "NR", "Наталія Р.": "Nataliia R.", "Квартира на Печерську": "Apartment in Pechersk", "«Роботи з колекції нарешті живуть, а не висять. Світло й вологість продумані до дрібниць.»": "“The pieces in my collection finally live instead of just hanging. Light and humidity are thought through to the last detail.”", "реалізація під ключ": "turnkey delivery", "пентхаус із галереєю": "penthouse with a gallery", "ВЛ": "VL", "Віктор Л.": "Viktor L.", "Пентхаус на Подолі": "Penthouse in Podil", "Розкажіть про": "Tell us about", "свій об'єкт": "your project", "Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.": "The first meeting and site visit are free. Afterwards you'll get a ballpark budget and timeline.", "Ім'я": "Name", "Телефон": "Phone", "Тип об'єкта": "Property type", "Квартира": "Apartment", "Будинок": "House", "Пентхаус": "Penthouse", "Комерція": "Commercial", "Площа, м²": "Area, m²", "Надіслати заявку →": "Send request →", "Як до вас звертатися": "How should we address you", "Дякуємо! Ми зателефонуємо вам протягом робочого дня.": "Thank you! We'll call you back within one business day.", "Форма поки не підключена. Зателефонуйте нам: +380 44 643 56 76": "The form isn't connected yet. Call us: +380 44 643 56 76", "Не вдалося надіслати. Зателефонуйте нам: +380 44 643 56 76": "Couldn't send. Call us: +380 44 643 56 76", "Архітектура, яка тримає слово": "Architecture that keeps its word", "Київ, вул. Липська, 5": "5 Lypska St, Kyiv", "Пн–Пт, 10:00–19:00": "Mon–Fri, 10:00–19:00", "Головне меню": "Main menu", "Відкрити меню": "Open menu", "Закрити меню": "Close menu", "Відкрити галерею: Квартира на Липках": "Open gallery: Apartment in Lypky", "Відкрити галерею: Будинок у Козині": "Open gallery: House in Kozyn", "Відкрити галерею: Пентхаус на Подолі": "Open gallery: Penthouse in Podil", "Оцінка 5 з 5": "Rated 5 out of 5", "Галерея проєкту": "Project gallery", "Закрити галерею": "Close gallery", "Попереднє фото": "Previous photo", "Наступне фото": "Next photo", "Закрити форму": "Close form"}, RULES = [["^(\\d+(?:–\\d+)?) тижн(?:і|ів)$", "$1 weeks"], ["^1 тиждень$", "1 week"], ["^(\\d+(?:–\\d+)?) місяц(?:ь|і|ів)$", "$1 months"], ["^(\\d+) міс\\.$", "$1 mo."], ["^(\\d+) м²$", "$1 m²"], ["^Фото (\\d) з (\\d)$", "Photo $1 of $2"], ["^Фото (\\d)$", "Photo $1"]], META = {"uk": null, "en": {"title": "KAMEN — architecture that keeps its word", "desc": "KAMEN is an architecture studio in Kyiv. Design, interiors and turnkey renovation of private residences with a fixed budget and timeline in the contract."}};
+  var EN = {"Проєкти": "Projects", "Підхід": "Approach", "Студія": "Studio", "Контакти": "Contact", "Обговорити проєкт": "Discuss a project", "Обговорити проєкт →": "Discuss a project →", "Архітектурне бюро · Київ · з 2015": "Architecture studio · Kyiv · since 2015", "Архітектура, яка": "Architecture that", "тримає слово": "keeps its word", "Проєктуємо й будуємо приватні резиденції. Кошторис і терміни фіксуємо в договорі, а за кожен тиждень затримки платимо самі.": "We design and build private residences. Budget and timeline are fixed in the contract, and every week of delay is on us.", "Дивитися проєкти": "View projects", "Гортайте": "Scroll", "Кожен проєкт —": "Every project —", "історія з цифрами": "a story in numbers", "Усі проєкти →": "All projects →", "3 фото": "3 photos", "Квартира · Липки": "Apartment · Lypky", "Квартира · Київ, Липки": "Apartment · Kyiv, Lypky", "Тиша в центрі міста": "Silence in the city centre", "−24 дБ шуму": "−24 dB noise", "Будинок · Козин": "House · Kozyn", "Будинок · Київщина, Козин": "House · Kyiv region, Kozyn", "Дім, що відкривається до лісу": "A home that opens onto the forest", "СЕС 15 кВт": "15 kW solar", "Пентхаус · Поділ": "Penthouse · Podil", "Пентхаус · Київ, Поділ": "Penthouse · Kyiv, Podil", "Лофт для колекціонера": "A loft for a collector", "Музейне світло": "Museum-grade light", "років на ринку": "years in business", "завершені об'єкти": "completed projects", "здано в договірний термін": "delivered on the contract date", "середнє відхилення від кошторису": "average deviation from budget", "(Наш підхід)": "(Our approach)", "Ми говоримо цифрами, а не прикметниками. Кожен проєкт — це": "We speak in numbers, not adjectives. Every project comes with a", "фіксований кошторис": "fixed budget", ", точний графік і один архітектор від першого ескізу до ключів.": ", a precise schedule and one architect from the first sketch to the keys.", "(Гарантії)": "(Guarantees)", "Три речі, які ми": "Three things we", "прописуємо в договорі": "put in the contract", "Фіксований кошторис": "Fixed budget", "Після затвердження проєкту ціна не росте. Зміни можливі лише з вашої ініціативи.": "Once the design is approved, the price doesn't grow. Changes happen only at your request.", "Фіксований термін": "Fixed timeline", "За кожен тиждень затримки з нашої вини повертаємо 0,5% вартості робіт.": "For every week of delay on our side, we refund 0.5% of the cost of works.", "Один відповідальний": "One person in charge", "Ваш архітектор веде об'єкт від першого ескізу до передачі ключів.": "Your architect leads the project from the first sketch to the handover of keys.", "П'ять етапів": "Five stages", "без сюрпризів": "no surprises", "Детальніше про підхід →": "More about our approach →", "Знайомство": "Introduction", "Виїзд на об'єкт, обміри, орієнтовний бюджет.": "Site visit, measurements, a ballpark budget.", "Концепція": "Concept", "Планування, матеріали, простір у 3D.": "Layout, materials, the space in 3D.", "Проєкт і кошторис": "Design & budget", "Креслення, специфікації, фіксована ціна в договорі.": "Drawings, specifications, a fixed price in the contract.", "Будівництво": "Construction", "Архітектор щотижня на об'єкті, фотозвіт щоп'ятниці.": "The architect is on site every week, with a photo report every Friday.", "Передача": "Handover", "Комплектація, ключі та 2 роки гарантії.": "Furnishing, keys and a 2-year warranty.", "(Відгуки)": "(Reviews)", "Що кажуть": "What our", "власники": "owners say", "«Щоп'ятниці — фотозвіт і оновлений графік. За рік будівництва я жодного разу не їздив на об'єкт без потреби.»": "“Every Friday: a photo report and an updated schedule. In a year of construction I never once had to drive to the site for nothing.”", "ДС": "DS", "Дмитро С.": "Dmytro S.", "Будинок у Конча-Заспі": "House in Koncha-Zaspa", "«Кошторис затвердили в березні, і він не змінився до самого кінця. Для нас це було важливіше за будь-який дизайн.»": "“The budget was approved in March and didn't change until the very end. For us that mattered more than any design.”", "ОК": "OK", "Олена та Ігор К.": "Olena & Ihor K.", "Будинок у Козині": "House in Kozyn", "«Найбільше боявся, що ремонт затягнеться на два роки. Ми заїхали на тиждень раніше, ніж обіцяли.»": "“My biggest fear was the renovation dragging on for two years. We moved in a week earlier than promised.”", "від договору до ключів": "from contract to keys", "після об'єднання квартир": "after merging two apartments", "АМ": "AM", "Андрій М.": "Andrii M.", "Квартира на Липках": "Apartment in Lypky", "«Архітекторка була на об'єкті щотижня. Будь-яке питання вирішувалось за день, а не за місяць.»": "“The architect was on site every week. Any question was settled in a day, not a month.”", "НР": "NR", "Наталія Р.": "Nataliia R.", "Квартира на Печерську": "Apartment in Pechersk", "«Роботи з колекції нарешті живуть, а не висять. Світло й вологість продумані до дрібниць.»": "“The pieces in my collection finally live instead of just hanging. Light and humidity are thought through to the last detail.”", "реалізація під ключ": "turnkey delivery", "пентхаус із галереєю": "penthouse with a gallery", "ВЛ": "VL", "Віктор Л.": "Viktor L.", "Пентхаус на Подолі": "Penthouse in Podil", "Розкажіть про": "Tell us about", "свій об'єкт": "your project", "Перша зустріч і виїзд на об'єкт безкоштовні. Після неї ви отримаєте орієнтовний бюджет і терміни.": "The first meeting and site visit are free. Afterwards you'll get a ballpark budget and timeline.", "Ім'я": "Name", "Телефон": "Phone", "Тип об'єкта": "Property type", "Квартира": "Apartment", "Будинок": "House", "Пентхаус": "Penthouse", "Комерція": "Commercial", "Площа, м²": "Area, m²", "Надіслати заявку →": "Send request →", "Як до вас звертатися": "How should we address you", "Дякуємо! Ми зателефонуємо вам протягом робочого дня.": "Thank you! We'll call you back within one business day.", "Форма поки не підключена. Зателефонуйте нам: +380 44 643 56 76": "The form isn't connected yet. Call us: +380 44 643 56 76", "Не вдалося надіслати. Зателефонуйте нам: +380 44 643 56 76": "Couldn't send. Call us: +380 44 643 56 76", "Послуги": "Services", "(Послуги)": "(Services)", "Що ми робимо": "What we do", "від ескізу до ключів": "from sketch to keys", "Можна замовити окремий етап або весь цикл — з одним договором і одним відповідальним.": "Order a single stage or the full cycle — with one contract and one person in charge.", "від 8 тижнів": "from 8 weeks", "від 6 тижнів": "from 6 weeks", "Повний цикл": "Full cycle", "на весь термін робіт": "for the whole build", "Архітектурне проєктування": "Architectural design", "Приватні будинки й реконструкції — від аналізу ділянки до робочої документації.": "Private houses and reconstructions — from site analysis to construction documents.", "Аналіз ділянки та містобудівні умови": "Site analysis and zoning conditions", "Ескізний і робочий проєкт": "Concept and detailed design", "Інженерні розділи та погодження": "Engineering sections and approvals", "Дизайн інтер'єру": "Interior design", "Простір, у якому кожне рішення має пояснення і ціну ще до початку робіт.": "A space where every decision has a reason and a price before works begin.", "Планування та 3D-візуалізації": "Layouts and 3D visualisations", "Креслення, розгортки, специфікації": "Drawings, elevations, specifications", "Підбір матеріалів і меблів": "Selection of materials and furniture", "Ремонт під ключ": "Turnkey renovation", "Проєктуємо й будуємо самі — з фіксованим кошторисом і графіком у договорі.": "We design and build ourselves — with a fixed budget and schedule in the contract.", "Власні бригади та технагляд": "Our own crews and site supervision", "Фотозвіт і графік щоп'ятниці": "Photo report and schedule every Friday", "2 роки гарантії на роботи": "2-year warranty on works", "Комплектація й нагляд": "Procurement & supervision", "Для тих, хто вже має підрядника, але хоче результат точно як у проєкті.": "For those who already have a contractor but want the result exactly as designed.", "Закупівля та логістика матеріалів": "Purchasing and delivery of materials", "Архітектор на об'єкті щотижня": "The architect on site every week", "Контроль відповідності проєкту": "Checking the work against the design", "Архітектура, яка тримає слово": "Architecture that keeps its word", "Київ, вул. Липська, 5": "5 Lypska St, Kyiv", "Пн–Пт, 10:00–19:00": "Mon–Fri, 10:00–19:00", "Головне меню": "Main menu", "Відкрити меню": "Open menu", "Закрити меню": "Close menu", "Відкрити галерею: Квартира на Липках": "Open gallery: Apartment in Lypky", "Відкрити галерею: Будинок у Козині": "Open gallery: House in Kozyn", "Відкрити галерею: Пентхаус на Подолі": "Open gallery: Penthouse in Podil", "Оцінка 5 з 5": "Rated 5 out of 5", "Галерея проєкту": "Project gallery", "Закрити галерею": "Close gallery", "Попереднє фото": "Previous photo", "Наступне фото": "Next photo", "Закрити форму": "Close form"}, RULES = [["^(\\d+(?:–\\d+)?) тижн(?:і|ів)$", "$1 weeks"], ["^1 тиждень$", "1 week"], ["^(\\d+(?:–\\d+)?) місяц(?:ь|і|ів)$", "$1 months"], ["^(\\d+) міс\\.$", "$1 mo."], ["^(\\d+) м²$", "$1 m²"], ["^Фото (\\d) з (\\d)$", "Photo $1 of $2"], ["^Фото (\\d)$", "Photo $1"]], META = {"uk": null, "en": {"title": "KAMEN — architecture that keeps its word", "desc": "KAMEN is an architecture studio in Kyiv. Design, interiors and turnkey renovation of private residences with a fixed budget and timeline in the contract."}};
   RULES = RULES.map(function (r) { return [new RegExp(r[0]), r[1]]; });
   var ATTRS = ['aria-label', 'placeholder', 'title', 'alt'];
   var lang = 'uk', origText = new WeakMap(), origAttr = new WeakMap();
